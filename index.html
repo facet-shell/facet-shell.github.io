@@ -49,7 +49,7 @@
 
   /* ── The bar ──────────────────────────────────────────── */
   .bar {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 45;
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
     padding-block: 10px;
     padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px));
@@ -71,8 +71,6 @@
   .bar .right { display: flex; align-items: center; }
   .bar .right a, .bar .right button { color: var(--secondary); }
   .bar .rec { color: var(--danger); margin-right: 10px; font-variant-numeric: tabular-nums; }
-  .bar .pen { background: none; border: 0; padding: 0; cursor: pointer; }
-  .bar .pen:hover, .bar .pen.on { color: var(--text); }
 
   main { width: 100%; max-width: 1152px; margin: 0 auto; padding-block: 56px 40px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
@@ -321,8 +319,6 @@
   .db.wdt.on i { background: var(--text); }
   .db.dzx { color: var(--danger); }
   .db.dzx:hover { border-color: var(--danger); }
-  .db.close { width: auto; padding: 0 10px; color: var(--text); font-size: 14px; border-color: var(--primary); }
-  .db.close:hover { background: color-mix(in srgb, var(--primary) 20%, transparent); }
   .dtb.col .grp { display: grid; grid-template-columns: 30px 30px; }
   .dtb.col .sep { width: 64px; height: 1px; margin: 4px 0; grid-column: 1 / -1; }
   .dtb .hint2 { display: none; font-size: 11px; color: var(--muted); margin-top: 8px; width: 64px; line-height: 1.3; }
@@ -334,18 +330,7 @@
   #dtools { position: sticky; bottom: max(12px, env(safe-area-inset-bottom, 0px)); z-index: 6; box-shadow: 0 10px 30px -6px rgba(0, 0, 0, .65); }
   .dwrap.dock #dtools { bottom: auto; top: calc(56px + env(safe-area-inset-top, 0px)); }
   .dwrap.dock .dstage { flex: 1; min-width: 0; }
-  .overlay { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 40; touch-action: none; cursor: crosshair; }
-  .overlay.through { pointer-events: none; }
-  .otools { position: fixed; left: 50%; bottom: max(4vh, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 41; box-shadow: 0 14px 40px -8px rgba(0, 0, 0, .7); animation: up .35s var(--ease); max-width: calc(100vw - 24px); }
-  .otools.col { left: max(24px, env(safe-area-inset-left, 0px)); top: 50%; bottom: auto; transform: translateY(-50%); animation: none; }
-  @keyframes up { from { transform: translate(-50%, 30px); opacity: 0; } }
-  /* the frame class sets position: relative; the page toolbar stays fixed to the screen */
-  .otools.tf { position: fixed; }
-  body.pagedraw #dtools { visibility: hidden; }
-  .otools:not(.col) .grp { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; max-width: calc(100vw - 48px); }
-  .otools:not(.col) .db, .otools:not(.col) .sep { flex: none; }
   .ruler { position: absolute; width: 420px; max-width: 70%; height: 44px; z-index: 3; cursor: grab; touch-action: none; border: 1px solid var(--frame); background: color-mix(in srgb, var(--surface) 82%, transparent) repeating-linear-gradient(90deg, var(--muted) 0 1px, transparent 1px 10px) 0 0 / 100% 9px no-repeat; transform-origin: 50% 50%; }
-  .ruler.fixed { position: fixed; z-index: 42; }
   .ruler::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 15px; background: repeating-linear-gradient(90deg, var(--secondary) 0 1px, transparent 1px 50px); opacity: .8; }
   .txtin { position: fixed; z-index: 60; background: transparent; border: 1px dashed var(--frame); outline: 0; padding: 0 2px; font-family: var(--font); font-weight: 600; min-width: 60px; }
 
@@ -883,7 +868,7 @@
 <header class="bar">
   <div class="ws"><span class="b">[</span><a href="#top" class="on">1</a><a href="#launcher">2</a><a href="#themes">3</a><a href="#draw">4</a><a href="#capture">5</a><a href="#control">6</a><a href="#canvas">7</a><a href="#install">8</a><span class="b">]</span><span class="tb"><span class="b">─[</span><span class="title" id="title">frameshell · a terminal-styled desktop</span><span class="b">]</span></span></div>
   <div class="clock" id="clock">--:--<small id="date"></small></div>
-  <div class="right"><span class="rec" id="bar-rec" hidden>● rec 0:00</span><span class="b">[</span><button class="pen" id="bar-pen" title="draw on this page (Super+P)" aria-pressed="false">✎ draw</button><span class="b">]─[</span><span id="bar-theme">periwinkle</span><span class="b gh">]─[</span><a class="gh" href="https://github.com/frame-shell">github</a><span class="b">]</span></div>
+  <div class="right"><span class="rec" id="bar-rec" hidden>● rec 0:00</span><span class="b">[</span><span id="bar-theme">periwinkle</span><span class="b gh">]─[</span><a class="gh" href="https://github.com/frame-shell">github</a><span class="b">]</span></div>
 </header>
 
 <main id="top">
@@ -968,8 +953,7 @@
   <section class="frame" id="draw">
     <span class="label">draw <span class="k">· Super+P</span></span>
     <h2>Scribble right on top of your desktop</h2>
-    <p>Super+P lays a see-through layer over every screen. The same tools sit in the picture editor and on an empty page for painting. Letters pick a tool (p h l a r e t x), Shift keeps lines at 15° steps and shapes square. Draw below, or on this whole page.</p>
-    <div class="row"><button class="btn" id="page-draw">draw on this page <kbd>Super</kbd><kbd>P</kbd></button><span class="muted" style="font-size:13px">✕ or Esc puts it away, it is still there next time</span></div>
+    <p>Super+P lays a see-through layer over every screen. The same tools sit in the picture editor and on an empty page for painting. Letters pick a tool (p h l a r e t x), Shift keeps lines at 15° steps and shapes square. Try them below.</p>
     <div class="dwrap" id="dwrap">
     <div class="dstage grid-bg" id="dstage">
       <div class="bgwin" style="left:4%;top:9%;width:50%;height:56%"><span class="lab">zed · Recorder.qml</span><span class="c-ac">function</span> <span class="c-tx">stop</span>() {
@@ -1825,9 +1809,9 @@ class Draw {
   }
 }
 // The ruler lies on top: drag it, the wheel turns it
-function makeRuler(host, fixed) {
+function makeRuler(host) {
   const r = document.createElement("div");
-  r.className = "ruler" + (fixed ? " fixed" : "");
+  r.className = "ruler";
   r.title = "drag it, the wheel turns it";
   let x = 0, y = 0, ang = -8;
   const place = () => { r.style.left = x + "px"; r.style.top = y + "px"; r.style.transform = `rotate(${ang}deg)`; };
@@ -1843,17 +1827,17 @@ function makeRuler(host, fixed) {
     toggle() {
       if (r.isConnected) { r.remove(); return false; }
       const b = host.getBoundingClientRect();
-      x = fixed ? innerWidth / 2 - 210 : b.width / 2 - 210; y = fixed ? innerHeight * .4 : b.height * .45;
+      x = b.width / 2 - 210; y = b.height * .45;
       place(); host.appendChild(r); return true;
     }
   };
 }
-// opts: { label, select, through, dock, onDock, ruler }
+// opts: { label, select, dock, ruler }
 function buildToolbar(engine, el, opts = {}) {
   el.classList.add("tf", "pri", "dtb");
   el.innerHTML = `<span class="tl">${opts.label ?? "draw"}</span><div class="grp"></div><div class="hint2"></div>`;
   const grp = $(".grp", el), lab = $(".tl", el), hint2 = $(".hint2", el);
-  const base = () => (opts.label ?? "draw") + (engine.through ? " · clicks go through" : "");
+  const base = () => opts.label ?? "draw";
   const add = (html, hint, fn, cls = "") => {
     const b = document.createElement("button");
     b.className = "db " + cls; b.innerHTML = html; b.setAttribute("aria-label", hint); b.title = hint;
@@ -1871,14 +1855,12 @@ function buildToolbar(engine, el, opts = {}) {
   sep();
   const wb = WIDTHS.map((w, i) => { const d = Math.min(16, w + 2); return add(`<i style="width:${d}px;height:${d}px"></i>`, `${w} px`, () => { engine.wi = i; sync(); }, "wdt"); });
   sep();
-  let rb = null, thb = null;
+  let rb = null;
   if (opts.ruler) rb = add(icon("ruler"), "ruler · drag it, the wheel turns it", () => { rb.classList.toggle("on", opts.ruler.toggle()); });
-  if (opts.through) thb = add(icon("through"), "click through", () => { engine.through = !engine.through; opts.through(engine.through); thb.classList.toggle("on", engine.through); lab.textContent = base(); });
   if (opts.dock) { const db = add(icon("dock"), "toolbar to the left", () => { const col = el.classList.toggle("col"); db.title = col ? "toolbar to the bottom" : "toolbar to the left"; db.setAttribute("aria-label", db.title); opts.dock(col); }); }
   add(icon("undo"), "undo (ctrl+z)", () => engine.undo());
   add(icon("redo"), "redo (ctrl+shift+z)", () => engine.redo());
   add(icon("trash"), "clear the drawing (undo brings it back)", () => engine.clear(), "dzx");
-  if (opts.close) { sep(); add("✕", "done · Esc or Super+P, the drawing stays for next time", opts.close, "close"); }
   function sync() {
     for (const id in tb) tb[id].classList.toggle("on", engine.tool === id);
     cb.forEach((b, i) => b.classList.toggle("on", COLORS[i] === engine.color));
@@ -1896,7 +1878,7 @@ document.addEventListener("keydown", e => {
   const k = e.key.toLowerCase();
   if ((e.ctrlKey || e.metaKey) && k === "z") { e.preventDefault(); e.shiftKey ? activeDraw.redo() : activeDraw.undo(); return; }
   if ((e.ctrlKey || e.metaKey) && k === "y") { e.preventDefault(); activeDraw.redo(); return; }
-  if (e.ctrlKey || e.metaKey || e.altKey || activeDraw.through) return;
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
   const t = TOOLS.find(t => t[1] === k);
   if (t) { activeDraw.tool = t[0]; activeDraw.sync?.(); }
 });
@@ -1928,50 +1910,6 @@ function claimKeys(engine, el) {
   new ResizeObserver(() => d.render()).observe(c);
   d.render();
   (async () => { await inView(st); await sleep(250); d.replay(); })();
-})();
-
-// Super+P on this page: a see-through layer over the viewport, the drawing kept in page coordinates
-(() => {
-  let ov = null, tools = null, engine = null, raf = 0, ruler = null;
-  const btn = $("#page-draw"), barBtn = $("#bar-pen");
-  const map = { toDoc: (cx, cy) => ({ x: cx, y: cy + scrollY }), toScreen: p => ({ x: p.x, y: p.y - scrollY }), scale: () => 1 };
-  const onScroll = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; engine?.render(); }); };
-  function open() {
-    if (!engine) {
-      ov = document.createElement("canvas");
-      ov.className = "overlay";
-      ov.setAttribute("aria-label", "drawing over the page");
-      engine = new Draw(ov, map);
-      engine.color = "danger"; engine.wi = 2;
-      tools = document.createElement("div");
-      tools.className = "otools";
-      ruler = makeRuler(document.body, true);
-      buildToolbar(engine, tools, { ruler, through: on => ov.classList.toggle("through", on), dock: col => tools.classList.toggle("col", col), close: () => close() });
-      document.body.append(ov, tools);
-    }
-    ov.hidden = tools.hidden = false;
-    document.body.classList.add("pagedraw");
-    engine.render();
-    activeDraw = engine;
-    addEventListener("scroll", onScroll, { passive: true });
-    addEventListener("resize", onScroll);
-    [btn, barBtn].forEach(b => { b.classList.add("on"); b.setAttribute("aria-pressed", "true"); });
-  }
-  function close() {
-    if (!ov || ov.hidden) return;
-    ov.hidden = tools.hidden = true;
-    document.body.classList.remove("pagedraw");
-    $$(".ruler.fixed").forEach(r => r.remove());
-    $$(".db", tools).forEach(b => { if (b.title.startsWith("ruler")) b.classList.remove("on"); });
-    if (activeDraw === engine) activeDraw = null;
-    removeEventListener("scroll", onScroll);
-    removeEventListener("resize", onScroll);
-    [btn, barBtn].forEach(b => { b.classList.remove("on"); b.setAttribute("aria-pressed", "false"); });
-  }
-  const toggle = () => (ov && !ov.hidden ? close() : open());
-  btn.addEventListener("click", toggle);
-  barBtn.addEventListener("click", toggle);
-  document.addEventListener("keydown", e => { if (e.key === "Escape" && ov && !ov.hidden && !typingTarget(e)) close(); });
 })();
 
 // ══ Screenshots: freeze, pick, notify, edit ══════════════════
