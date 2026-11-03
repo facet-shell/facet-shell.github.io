@@ -426,7 +426,16 @@
   .mt2:hover { border-color: var(--frame); }
   .mt2.sel { border-color: var(--primary); background: color-mix(in srgb, var(--primary) 10%, transparent); }
   .mt2.gone { transform: scale(.7); opacity: 0; }
-  .mt2 .th { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: var(--surface); overflow: hidden; }
+  .mt2 { display: block; width: auto; }
+  .mt2 .th { display: block; position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: var(--surface); overflow: hidden; }
+  /* a hint of what is in the picture: windows for screenshots, a horizon for recordings, a stroke for paintings */
+  .mt2 .th.p::before, .mt2 .th.p::after { content: ""; position: absolute; border: 1px solid color-mix(in srgb, var(--text) 35%, transparent); background: color-mix(in srgb, var(--bg) 45%, transparent); }
+  .mt2 .th.p::before { left: 8%; top: 16%; width: 50%; height: 62%; }
+  .mt2 .th.p::after { left: 63%; top: 16%; width: 29%; height: 36%; }
+  .mt2 .th.v::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 36%; background: color-mix(in srgb, var(--bg) 55%, transparent); }
+  .mt2 .th.v::after { content: ""; position: absolute; right: 24%; top: 22%; width: 12%; aspect-ratio: 1; border-radius: 50%; background: var(--warn); opacity: .85; }
+  .mt2 .th.paint::before { content: ""; position: absolute; left: 18%; top: 30%; width: 60%; height: 36%; border: 3px solid var(--accent); border-color: var(--accent) transparent transparent var(--accent); border-radius: 50% 10% 50% 10%; transform: rotate(-8deg); background: none; }
+  .mt2 .th.paint::after { display: none; }
   .mt2 .bdg { position: absolute; font-size: 10px; padding: 0 5px; line-height: 16px; }
   .mt2 .dur { right: 4px; bottom: 4px; background: var(--bg); color: var(--text); }
   .mt2 .tags { position: absolute; left: 4px; top: 4px; display: flex; gap: 4px; }
@@ -2199,7 +2208,7 @@ function claimKeys(engine, el) {
       : picked.length ? `<b>${picked.length} picked · ${mb(picked.reduce((a, it) => a + it.mb, 0))}</b><span class="sp"></span><button class="tui prt">${picked.length > 1 ? "edit first" : "edit"}</button>${picked.length === 1 ? `<button class="tui">open</button>` : ""}<button class="tui">copy</button><button class="tui">folder</button><button class="tui dzt" data-a="del">delete ${picked.length}</button>`
       : status ? `<span class="okm">${status}</span>` : `<span>click picks · ctrl+click more · shift+click a run · double click opens in the editor · drop a folder to add it</span>`;
     box.innerHTML = `<div class="mrow1">${row1}</div><div class="mrow2">${row2}</div>
-      <div class="tf mgrid"><span class="tl">${filter === "all" ? "screenshots and recordings" : FILTERS.find(f => f[0] === filter)[1]}</span><div class="media">${vis.map(it => `<button class="mt2${sel.has(it.id) ? " sel" : ""}" data-id="${it.id}" aria-label="${it.n}"><span class="th" style="background:${art(it)}">${it.k === "v" ? `<span class="bdg dur">▶ ${it.dur}</span>` : ""}<span class="tags">${it.e ? `<span style="background:var(--accent)">edited</span>` : ""}${it.tr ? `<span style="background:var(--secondary)">tracks</span>` : ""}</span><span class="ck">✓</span></span><span class="fn">${it.n}</span><span class="fm">${it.m} · ${mb(it.mb)}</span></button>`).join("") || `<p class="muted" style="padding:20px;font-size:13px">nothing matches</p>`}</div></div>
+      <div class="tf mgrid"><span class="tl">${filter === "all" ? "screenshots and recordings" : FILTERS.find(f => f[0] === filter)[1]}</span><div class="media">${vis.map(it => `<button class="mt2${sel.has(it.id) ? " sel" : ""}" data-id="${it.id}" aria-label="${it.n}"><span class="th ${it.k}${/^painting/.test(it.n) ? " paint" : ""}" style="background:${art(it)}">${it.k === "v" ? `<span class="bdg dur">▶ ${it.dur}</span>` : ""}<span class="tags">${it.e ? `<span style="background:var(--accent)">edited</span>` : ""}${it.tr ? `<span style="background:var(--secondary)">tracks</span>` : ""}</span><span class="ck">✓</span></span><span class="fn">${it.n}</span><span class="fm">${it.m} · ${mb(it.mb)}</span></button>`).join("") || `<p class="muted" style="padding:20px;font-size:13px">nothing matches</p>`}</div></div>
       <div class="mfoot"><span>~/Pictures/screenshots</span><span>~/Pictures/paintings</span><span>~/Videos/recordings</span></div>`;
     $$("[data-f]", box).forEach(b => b.addEventListener("click", () => { filter = b.dataset.f; sel.clear(); asking = false; status = ""; draw(); }));
     $$(".mt2", box).forEach(b => b.addEventListener("click", e => {
