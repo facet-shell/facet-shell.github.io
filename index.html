@@ -970,7 +970,7 @@
         <code id="install-cmd">curl -fsSL https://frame-shell.github.io/install.sh | bash</code>
         <button class="copy" data-copy="install-cmd">copy</button>
       </div>
-      <p class="note"><b>work in progress</b> · it runs on my CachyOS machine, but it still has bugs and is not ready for anyone else's desktop yet. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">What to try</a> · <a href="https://github.com/orgs/frame-shell/projects/1">the board</a></p>
+      <p class="note"><b>work in progress</b> · still early and still buggy, so expect things to break. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">What to try</a> · <a href="https://github.com/orgs/frame-shell/projects/1">the board</a></p>
     </div>
     <div class="stage" data-w="640" data-h="400" id="hero-stage" role="img" aria-label="A short loop: the launcher answers with Claude, an app comes to you, drawing on the screen, a theme switch">
       <div class="screen hs grid-bg" id="hs" style="width:640px;height:400px">
@@ -1164,7 +1164,7 @@
           <div class="win" style="left:760px;top:360px;width:480px;height:320px"><span class="lab">vesktop · #general</span><div class="tx"><span class="c-se">anna</span>  on my way</div><div class="tx"><span class="c-se">max</span>  gg, one more?</div><div class="tx"><span class="c-se">lena</span>  sent a picture</div></div>
           <div class="win" style="left:40px;top:520px;width:690px;height:160px"><span class="lab">spotify</span><div class="tx c-tx">Midnight City</div><div class="tx c-mu">M83</div></div>
         </div>
-        <div class="ui u0 who2">vxnsin@cachyos</div>
+        <div class="ui u0 who2">you@cachyos</div>
         <div class="ui u3 mid">
           <div class="clk" id="lk-clock">12:04</div>
           <div class="dt" id="lk-date">tuesday · 3 november</div>
@@ -1339,7 +1339,7 @@
 
   <section class="frame wip" id="status">
     <span class="label">status · work in progress</span>
-    <p>frameshell is a work in progress and still has a lot of bugs. It runs on my CachyOS machine; on yours, expect things to break. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">TESTING.md</a> lists what to try and the command that shows why when something fails. Ideas and bugs go on <a href="https://github.com/orgs/frame-shell/projects/1">the board</a>.</p>
+    <p>frameshell is a work in progress and still has a lot of bugs, so expect things to break. <code>frame install</code> moves the configs it replaces into a backup first, and <code>frame restore</code> puts them back. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">TESTING.md</a> lists what to try and the command that shows why when something fails. Ideas, bug reports and help are welcome on <a href="https://github.com/orgs/frame-shell/projects/1">the board</a>.</p>
   </section>
 
   <footer>
@@ -1664,7 +1664,7 @@ $$(".copy").forEach(b => b.addEventListener("click", async () => {
       case "a": return [R("⏰", rest ? `alarm · ${rest}` : "laundry · 10:00", "alarm", rest ? "rings until snooze or done" : "mon to fri", [["time", "10:00"], ["days", "m-f"], ["label", "laundry"]], "warn")];
       case "#": return EMOJI.filter(([, n]) => !rest || n.split(" ").some(w => w.startsWith(rest.toLowerCase()))).map(([e, n]) => R(e, n, "emoji", "enter copies · shift+enter pastes it into the window behind", [["emoji", e], ["group", "smileys & emotion"]], "surface2", { emoji: true }));
       case "/": return rest ? [["/", rest, "folder", "~/Documents"], ["·", `${rest}.md`, "file", "~/Documents/" + rest], ["·", `old-${rest}.txt`, "file", "~/Downloads"]].map(([g, t, c, dir]) => R(g, t, c, dir, [["path", `${dir}/${t}`]], "secondary")) : [I("type a file or folder name", "words before the last narrow the path")];
-      case "ssh": return [R(">", rest ? `ssh ${rest}` : "nas", "ssh", rest ? "not in ~/.ssh/config" : "vxnsin@192.168.1.20", [["host", "192.168.1.20"], ["user", "vxnsin"], ["port", "22"]], "frame")];
+      case "ssh": return [R(">", rest ? `ssh ${rest}` : "nas", "ssh", rest ? "not in ~/.ssh/config" : "you@192.168.1.20", [["host", "192.168.1.20"], ["user", "you"], ["port", "22"]], "frame")];
       case ";": return [["¶", "curl -fsSL https://frame-shell.github.io/install.sh | bash"], ["▣", "image · png · 1.2MB"], ["¶", "token for the staging box"], ["¶", "meeting at 15:30"]].filter(([, t]) => !rest || t.includes(rest)).map(([g, t]) => R(g, t, g === "▣" ? "image" : "text", "enter copies · shift+enter deletes it from the history", [], "frame"));
       case "?": { const [k, ...w] = rest.split(" "); const eng = { g: "Google", ddg: "DuckDuckGo", yt: "YouTube", gh: "GitHub", aw: "Arch Wiki", aur: "AUR", w: "Wikipedia", r: "Reddit" }; return eng[k] && w.length ? [R(eng[k][0], `${eng[k]}: ${w.join(" ")}`, k, "opens in the browser", [], "secondary")] : Object.entries(eng).map(([key, n]) => R(n[0], rest ? `${n}: ${rest}` : `${key} · ${n}`, key, "", [], "secondary")); }
       case "c": return rest ? [R("c", rest, "claude", "enter asks claude -p; nothing is sent before that", [["model", "haiku"], ["runs in", "an empty folder"]], "accent")] : [I("ask Claude something", "only there when the claude CLI is installed")];
@@ -2723,7 +2723,7 @@ function claimKeys(engine, el) {
     const gox = mode === "gox";
     panel.innerHTML = `<span class="tl">control</span>
       <div class="tf"><span class="tl">session</span>
-        <div class="who"><span class="av">V</span><div><b>vxnsin@cachyos</b><small>up 3h 12m · CachyOS · Hyprland</small></div></div>
+        <div class="who"><span class="av">Y</span><div><b>you@cachyos</b><small>up 3h 12m · CachyOS · Hyprland</small></div></div>
         <div class="pw">${[["lock", "lock", "lock"], ["moon", "sleep", "suspend"], ["rot", "reboot", "reboot"], ["pwr", "off", "shutdown"]].map(([g, l, k]) =>
           `<button class="tui${k === "reboot" || k === "shutdown" ? " dz" : ""}${armed === k ? " on" : ""}" data-pw="${k}">${icon(g)}<span>${armed === k ? "again?" : l}</span></button>`).join("")}</div>
       </div>
