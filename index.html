@@ -339,6 +339,11 @@
   .otools { position: fixed; left: 50%; bottom: max(4vh, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 41; box-shadow: 0 14px 40px -8px rgba(0, 0, 0, .7); animation: up .35s var(--ease); max-width: calc(100vw - 24px); }
   .otools.col { left: max(24px, env(safe-area-inset-left, 0px)); top: 50%; bottom: auto; transform: translateY(-50%); animation: none; }
   @keyframes up { from { transform: translate(-50%, 30px); opacity: 0; } }
+  /* the frame class sets position: relative; the page toolbar stays fixed to the screen */
+  .otools.tf { position: fixed; }
+  body.pagedraw #dtools { visibility: hidden; }
+  .otools:not(.col) .grp { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; max-width: calc(100vw - 48px); }
+  .otools:not(.col) .db, .otools:not(.col) .sep { flex: none; }
   .ruler { position: absolute; width: 420px; max-width: 70%; height: 44px; z-index: 3; cursor: grab; touch-action: none; border: 1px solid var(--frame); background: color-mix(in srgb, var(--surface) 82%, transparent) repeating-linear-gradient(90deg, var(--muted) 0 1px, transparent 1px 10px) 0 0 / 100% 9px no-repeat; transform-origin: 50% 50%; }
   .ruler.fixed { position: fixed; z-index: 42; }
   .ruler::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 15px; background: repeating-linear-gradient(90deg, var(--secondary) 0 1px, transparent 1px 50px); opacity: .8; }
@@ -1945,6 +1950,7 @@ function claimKeys(engine, el) {
       document.body.append(ov, tools);
     }
     ov.hidden = tools.hidden = false;
+    document.body.classList.add("pagedraw");
     engine.render();
     activeDraw = engine;
     addEventListener("scroll", onScroll, { passive: true });
@@ -1954,6 +1960,7 @@ function claimKeys(engine, el) {
   function close() {
     if (!ov || ov.hidden) return;
     ov.hidden = tools.hidden = true;
+    document.body.classList.remove("pagedraw");
     $$(".ruler.fixed").forEach(r => r.remove());
     $$(".db", tools).forEach(b => { if (b.title.startsWith("ruler")) b.classList.remove("on"); });
     if (activeDraw === engine) activeDraw = null;
