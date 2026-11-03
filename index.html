@@ -688,6 +688,70 @@
   .ttile span { display: flex; gap: 3px; }
   .ttile i { width: 14px; height: 14px; border: 1px solid var(--surface2); display: block; }
 
+  /* ── Lockscreen (lockscreen/LockSurface.qml), drawn at 1280×720 ── */
+  .lk { width: 1280px; height: 720px; font-size: 15px; }
+  .lk .desk { position: absolute; inset: 0; transition: filter .9s var(--ease) .3s, transform .9s var(--ease) .3s; transform-origin: 50% 50%; }
+  .lk.locked .desk { filter: blur(16px) brightness(.55) saturate(1.15); transform: scale(1.02); transition-delay: 0s; }
+  .lk .desk .sbar { height: 34px; font-size: 15px; padding: 0 16px; }
+  .lk .desk .win { font-size: 16px; padding: 30px 20px 14px; }
+  .lk .desk .win .ln { height: 10px; margin: 13px 0; }
+  .lk .desk .win > .lab { font-size: 16px; }
+  .lk .ui { position: absolute; opacity: 0; pointer-events: none; transition: opacity .45s var(--ease), transform .45s var(--ease); }
+  .lk.locked .ui { opacity: 1; pointer-events: auto; transform: none; }
+  .lk .u0 { transition-delay: 0s; }
+  .lk .u1 { transition-delay: .1s; }
+  .lk .u2 { transition-delay: .2s; }
+  .lk .u3 { transition-delay: .3s; }
+  .lk.locked .u0 { transition-delay: .45s; }
+  .lk.locked .u1 { transition-delay: .35s; }
+  .lk.locked .u2 { transition-delay: .25s; }
+  .lk.locked .u3 { transition-delay: .15s; }
+  .lk .who2 { top: 37px; right: 53px; color: var(--muted); font-size: 12px; }
+  .lk .mid { left: 0; right: 0; top: 50%; display: flex; flex-direction: column; align-items: center; transform: translateY(calc(-50% + 18px)); }
+  .lk.locked .mid { transform: translateY(-50%); }
+  .lk .clk { font-size: 127px; font-weight: 300; letter-spacing: -2.7px; color: var(--text); line-height: 1; }
+  .lk .dt { font-size: 17px; color: var(--muted); margin: 9px 0 43px; }
+  .lk .fld { width: 373px; height: 52px; display: flex; align-items: center; gap: 11px; padding: 0 17px; border-color: var(--primary); }
+  .lk .fld > .tl { font-size: 10px; color: var(--primary); }
+  .lk .fld.bad { border-color: var(--danger); animation: shake .4s; }
+  .lk .fld.bad > .tl { color: var(--danger); }
+  @keyframes shake { 20% { transform: translateX(-10px); } 40% { transform: translateX(8px); } 60% { transform: translateX(-6px); } 80% { transform: translateX(4px); } }
+  .lk .fld .ps { color: var(--primary); font-size: 16px; }
+  .lk .fld input { flex: 1; min-width: 0; background: none; border: 0; outline: 0; color: var(--secondary); font: inherit; font-size: 16px; letter-spacing: 2px; caret-color: var(--secondary); }
+  .lk .hint3 { margin-top: 11px; font-size: 11px; color: var(--muted); }
+  .lk .hint3.bad { color: var(--danger); }
+  .lk .wx { right: 53px; top: 50%; width: 253px; padding: 18px 16px 14px; transform: translateY(-50%); font-size: 11px; color: var(--dim); display: flex; flex-direction: column; gap: 6px; }
+  .lk.locked .wx { transform: translateY(-50%); }
+  .lk .wx > .tl, .lk .np > .tl, .lk .pwr > .tl { font-size: 10px; }
+  .lk .il { display: flex; align-items: center; gap: 6px; color: var(--muted); }
+  .lk .il .ic { width: 12px; height: 12px; }
+  .lk .big { display: flex; align-items: center; gap: 12px; margin: 2px 0; }
+  .lk .big .ic { width: 56px; height: 56px; color: var(--secondary); stroke-width: 1.6; }
+  .lk .big b { font-size: 48px; font-weight: 400; color: var(--text); line-height: 1; }
+  .lk .kv { display: flex; justify-content: space-between; }
+  .lk .sec2 { color: var(--frame); margin-top: 6px; }
+  .lk .cols { display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; gap: 2px; }
+  .lk .cols span { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .lk .cols .ic { width: 14px; height: 14px; color: var(--secondary); }
+  .lk .cols small { color: var(--muted); font-size: 10px; }
+  .lk .np { left: 53px; bottom: 47px; width: 293px; height: 73px; padding: 14px 15px; display: flex; align-items: center; gap: 13px; }
+  .lk .np .art { width: 43px; height: 43px; flex: none; background: radial-gradient(circle at 30% 30%, var(--warn), var(--accent) 45%, var(--primary) 80%); }
+  .lk .np .tt { flex: 1; min-width: 0; font-size: 12px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lk .np .tt small { display: block; color: var(--muted); font-size: 10px; }
+  .lk .np .tr { height: 2px; background: var(--surface2); margin-top: 6px; position: relative; }
+  .lk .np .tr i { position: absolute; inset: 0 auto 0 0; background: var(--primary); }
+  .lk .np .mb2 { display: flex; gap: 10px; }
+  .lk .np button { background: none; border: 0; padding: 0; cursor: pointer; color: var(--secondary); }
+  .lk .np button:hover { color: var(--text); }
+  .lk .np .ic { width: 15px; height: 15px; }
+  .lk .pwr { right: 53px; bottom: 82px; padding: 12px 10px 8px; display: flex; gap: 6px; }
+  .lk .pwr.sure > .tl { color: var(--warn); }
+  .lk .pwr .tui { height: 24px; display: flex; align-items: center; gap: 6px; padding: 0 10px; background: transparent; font-size: 10px; color: var(--dim); }
+  .lk .pwr .tui .ic { width: 11px; height: 11px; color: var(--muted); }
+  .lk .pwr .tui.dz:hover .ic { color: var(--danger); }
+  .lk .kb { right: 53px; bottom: 53px; color: var(--muted); font-size: 11px; }
+  .lk .kb .ic { width: 12px; height: 12px; }
+
   /* ── Canvas overview (canvas/CanvasOverview.qml) ───────── */
   .ov { width: 640px; height: 360px; }
   .ov .view { position: absolute; inset: 22px 0 0 0; overflow: hidden; background: radial-gradient(circle at 72% 28%, color-mix(in srgb, var(--accent) 26%, var(--bg)), color-mix(in srgb, var(--primary) 10%, var(--bg)) 55%, var(--bg)); }
@@ -872,6 +936,20 @@
   <symbol id="i-undo" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.5 8c-2.65 0-5.05 1-6.9 2.6L2 7v9h9l-3.62-3.62A7.95 7.95 0 0 1 12.5 10.5c3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></symbol>
   <symbol id="i-redo" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.4 10.6C16.55 9 14.15 8 11.5 8c-4.65 0-8.58 3.03-9.96 7.22L3.9 16a8 8 0 0 1 7.6-5.5c1.95 0 3.73.72 5.12 1.88L13 16h9V7z"/></symbol>
   <symbol id="i-trash" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3.5"/><path d="M8.5 2v1.5M3.5 8H2M4.9 4.4 3.8 3.3M13.2 4.4l1-1"/><path fill="currentColor" stroke="none" d="M7 20a4.5 4.5 0 0 1-.4-9 6 6 0 0 1 11.3 1.5A3.8 3.8 0 0 1 17.5 20z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 15a4.5 4.5 0 0 1-.4-9 6 6 0 0 1 11.3 1.5A3.8 3.8 0 0 1 17.5 15z"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.5S5.5 10 5.5 14.5a6.5 6.5 0 0 0 13 0C18.5 10 12 2.5 12 2.5z"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8"/></symbol>
+  <symbol id="i-rise" viewBox="0 0 24 24"><path d="M5 17a7 7 0 0 1 14 0M2 20h20M12 3v6M9 6l3-3 3 3"/></symbol>
+  <symbol id="i-set" viewBox="0 0 24 24"><path d="M5 17a7 7 0 0 1 14 0M2 20h20M12 3v6M9 6l3 3 3-3"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M5 4h2.5v16H5zM20 4v16L8.5 12z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M6 3.5v17L20 12z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M6 4h4v16H6zM14 4h4v16h-4z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M16.5 4H19v16h-2.5zM4 4v16l11.5-8z"/></symbol>
+  <symbol id="i-kbd" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" fill="currentColor" stroke="none"/><path stroke="var(--bg)" d="M5.5 9.5h1M9 9.5h1M12.5 9.5h1M16 9.5h1M5.5 12.5h1M9 12.5h1M12.5 12.5h1M16 12.5h1M8 15.5h8"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
 </svg>
 
 <header class="bar">
@@ -1069,6 +1147,48 @@
     <div class="setw" id="setw">
       <div class="tf snav" id="snav"></div>
       <div class="tf spage" id="spage"></div>
+    </div>
+  </section>
+
+  <section class="frame" id="lock">
+    <span class="label">lockscreen <span class="k">· Super+L</span></span>
+    <h2>Locked behind a blur of what you left</h2>
+    <p>Super+L, ten idle minutes or going to sleep take a snapshot of every screen and lock over it, blurred and darkened. Clock, password, weather and what plays sit on top; the other screens only show the blur. Unlocking plays it all backwards. <code>frame login</code> puts the same look on the login screen.</p>
+    <div class="row" style="margin-bottom:14px"><button class="btn" id="lk-lock">lock <kbd>Super</kbd><kbd>L</kbd></button><span class="muted" style="font-size:13px" id="lk-say">any password unlocks here</span></div>
+    <div class="stage" data-w="1280" data-h="720" id="lk-stage">
+      <div class="screen lk grid-bg" id="lk" style="width:1280px;height:720px">
+        <div class="desk grid-bg">
+          <div class="sbar"><span><span class="bk">[</span><b>1</b> 2 3<span class="bk">]─[</span>zen<span class="bk">]</span></span><span><span class="c-tx" id="lk-bar-clock">12:04</span>  <span class="c-mu">tue 3 nov</span></span><span><span class="bk">[</span><span class="c-se">♪ Midnight City · M83</span><span class="bk">]─[</span>cpu <span class="c-tx">7%</span><span class="bk">]─[</span>ram <span class="c-tx">6.1G</span><span class="bk">]</span></span></div>
+          <div class="win on" style="left:40px;top:70px;width:690px;height:420px"><span class="lab">zen · frame-shell · GitHub</span><div class="ln p" style="width:40%"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:72%"></div><div class="ln" style="width:90%"></div><div class="ln p" style="width:30%"></div><div class="ln" style="width:64%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:55%"></div></div>
+          <div class="win" style="left:760px;top:70px;width:480px;height:260px"><span class="lab">ghostty</span><div class="tx"><span class="c-p">❯</span> frame update</div><div class="tx"><span class="c-ok">✓</span> shell <span class="c-mu">0:02</span></div><div class="tx"><span class="c-ok">✓</span> 3 packages installed <span class="c-mu">0:41</span></div><div class="tx"><span class="c-p">❯</span> <span class="caret"></span></div></div>
+          <div class="win" style="left:760px;top:360px;width:480px;height:320px"><span class="lab">vesktop · #general</span><div class="tx"><span class="c-se">anna</span>  on my way</div><div class="tx"><span class="c-se">max</span>  gg, one more?</div><div class="tx"><span class="c-se">lena</span>  sent a picture</div></div>
+          <div class="win" style="left:40px;top:520px;width:690px;height:160px"><span class="lab">spotify</span><div class="tx c-tx">Midnight City</div><div class="tx c-mu">M83</div></div>
+        </div>
+        <div class="ui u0 who2">vxnsin@cachyos</div>
+        <div class="ui u3 mid">
+          <div class="clk" id="lk-clock">12:04</div>
+          <div class="dt" id="lk-date">tuesday · 3 november</div>
+          <div class="tf fld" id="lk-field"><span class="tl">unlock</span><span class="ps">❯</span><input type="password" id="lk-in" aria-label="password" autocomplete="off" tabindex="-1"></div>
+          <div class="hint3" id="lk-hint">enter to unlock · esc to clear</div>
+        </div>
+        <div class="ui u1 tf wx"><span class="tl">weather</span>
+          <span class="il"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>Berlin</span>
+          <span class="big"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg><b>8°</b></span>
+          <span>partly cloudy</span>
+          <span class="c-mu">feels like 5° · 11° / 4°</span>
+          <span class="kv"><span class="il"><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg>humidity</span><span>81%</span></span>
+          <span class="kv"><span class="il"><svg class="ic" aria-hidden="true"><use href="#i-wind"/></svg>wind</span><span>14 km/h SW</span></span>
+          <span class="kv"><span class="il"><svg class="ic" aria-hidden="true"><use href="#i-rise"/></svg>sunrise</span><span>07:02</span></span>
+          <span class="kv"><span class="il"><svg class="ic" aria-hidden="true"><use href="#i-set"/></svg>sunset</span><span>16:41</span></span>
+          <span class="sec2">── next hours</span>
+          <span class="cols"><span><small>13:00</small><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>9°</span><span><small>14:00</small><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg>10°</span><span><small>15:00</small><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>9°</span><span><small>16:00</small><svg class="ic" aria-hidden="true"><use href="#i-rain"/></svg>8°</span></span>
+          <span class="sec2">── next days</span>
+          <span class="cols"><span><small>wed</small><svg class="ic" aria-hidden="true"><use href="#i-rain"/></svg>11° <small>4°</small></span><span><small>thu</small><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>9° <small>3°</small></span><span><small>fri</small><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg>12° <small>6°</small></span><span><small>sat</small><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>10° <small>5°</small></span></span>
+        </div>
+        <div class="ui u0 tf np"><span class="tl">now playing</span><span class="art"></span><span class="tt">Midnight City<small>M83</small><span class="tr"><i id="lk-prog" style="width:38%"></i></span></span><span class="mb2"><button aria-label="previous"><svg class="ic" aria-hidden="true"><use href="#i-prev"/></svg></button><button id="lk-pp" aria-label="play or pause"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg></button><button aria-label="next"><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg></button></span></div>
+        <div class="ui u0 tf pwr" id="lk-pwr"><span class="tl">power</span></div>
+        <div class="ui u0 kb"><span class="il"><svg class="ic" aria-hidden="true"><use href="#i-kbd"/></svg>de</span></div>
+      </div>
     </div>
   </section>
 
@@ -1356,7 +1476,7 @@ function tick() {
 tick();
 setInterval(tick, 10000);
 
-const sections = [["top", "frameshell · a terminal-styled desktop", 0], ["launcher", "launcher · Super+Space", 1], ["themes", "themes · frame theme set", 2], ["draw", "draw · Super+P", 3], ["capture", "screenshots · Print", 4], ["record", "recording · Super+Shift+R", 4], ["control", "control center · Super+C", 5], ["settings", "settings · Super+,", 5], ["canvas", "infinite canvas · Super+wheel", 6], ["games", "games · Super+Tab", 6], ["install", "frame install", 7], ["more", "what else is in it", 7], ["keys", "keys", 7], ["status", "work in progress", 7]];
+const sections = [["top", "frameshell · a terminal-styled desktop", 0], ["launcher", "launcher · Super+Space", 1], ["themes", "themes · frame theme set", 2], ["draw", "draw · Super+P", 3], ["capture", "screenshots · Print", 4], ["record", "recording · Super+Shift+R", 4], ["control", "control center · Super+C", 5], ["settings", "settings · Super+,", 5], ["lock", "lockscreen · Super+L", 5], ["canvas", "infinite canvas · Super+wheel", 6], ["games", "games · Super+Tab", 6], ["install", "frame install", 7], ["more", "what else is in it", 7], ["keys", "keys", 7], ["status", "work in progress", 7]];
 const wsLinks = $$(".ws a");
 const spy = new IntersectionObserver(entries => {
   for (const e of entries) {
@@ -2845,6 +2965,76 @@ function claimKeys(engine, el) {
   }
   themeListeners.push(() => { if (page === 0) draw(); });
   draw();
+})();
+
+// ══ Lockscreen: lock, type, unlock backwards ═════════════════
+(() => {
+  const stage = watch($("#lk-stage")), lk = $("#lk"), inp = $("#lk-in"), field = $("#lk-field"), hint = $("#lk-hint"), pwr = $("#lk-pwr"), say = $("#lk-say");
+  let locked = false, busy = false, run = 0, sure = false, playing = true, prog = 38;
+  const setHint = (t, bad) => { hint.textContent = t; hint.classList.toggle("bad", !!bad); };
+  function clockTick() {
+    const d = new Date();
+    $("#lk-clock").textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    $("#lk-bar-clock").textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+    $("#lk-date").textContent = `${d.toLocaleDateString("en-GB", { weekday: "long" })} · ${d.getDate()} ${d.toLocaleDateString("en-GB", { month: "long" })}`.toLowerCase();
+  }
+  clockTick(); setInterval(clockTick, 10000);
+  function drawPower() {
+    pwr.classList.toggle("sure", sure);
+    pwr.innerHTML = sure
+      ? `<span class="tl">power · sure?</span><button class="tui dz" data-p="off">${icon("pwr")}shut down</button><button class="tui" data-p="re">${icon("rot")}restart</button><button class="tui" data-p="no">${icon("x")}cancel</button>`
+      : `<span class="tl">power</span><button class="tui" data-p="ask">${icon("pwr")}power</button>`;
+    $$("[data-p]", pwr).forEach(b => b.addEventListener("click", () => {
+      run++;
+      const p = b.dataset.p;
+      if (p === "ask") sure = true;
+      else { sure = false; if (p !== "no") say.textContent = `${p === "off" ? "shuts down" : "restarts"} · not on this page`; }
+      drawPower();
+    }));
+  }
+  drawPower();
+  $("#lk-pp").addEventListener("click", () => { playing = !playing; $("#lk-pp").innerHTML = icon(playing ? "pause" : "play"); });
+  setInterval(() => { if (playing && locked && visible(stage)) { prog = (prog + .4) % 100; $("#lk-prog").style.width = prog + "%"; } }, 500);
+  function lock() {
+    if (locked) return;
+    locked = true; sure = false; drawPower();
+    inp.value = ""; setHint("enter to unlock · esc to clear");
+    lk.classList.add("locked");
+    inp.tabIndex = 0;
+    $("#lk-lock").classList.add("on");
+  }
+  async function unlock() {
+    if (busy) return;
+    busy = true;
+    setHint("checking…");
+    await sleep(reduced() ? 0 : 700);
+    lk.classList.remove("locked");
+    locked = false; busy = false;
+    inp.blur(); inp.tabIndex = -1; inp.value = "";
+    $("#lk-lock").classList.remove("on");
+    say.textContent = "any password unlocks here";
+  }
+  inp.addEventListener("keydown", e => {
+    if (e.key === "Enter") { e.preventDefault(); run++; if (!inp.value) { field.classList.remove("bad"); void field.offsetWidth; field.classList.add("bad"); setHint("wrong password", true); setTimeout(() => { field.classList.remove("bad"); setHint("enter to unlock · esc to clear"); }, 1400); } else unlock(); }
+    if (e.key === "Escape") { inp.value = ""; }
+  });
+  inp.addEventListener("input", () => { run++; });
+  field.addEventListener("click", () => { if (locked) inp.focus({ preventScroll: true }); });
+  $("#lk-lock").addEventListener("click", () => { run++; locked ? unlock() : (lock(), inp.focus({ preventScroll: true })); });
+  // On its own: lock, type a password, unlock, again, while it is on screen and nobody touched it
+  (async () => {
+    if (reduced()) { lock(); return; }
+    const id = ++run, ok = () => id === run;
+    for (;;) {
+      await wait(stage, 1200); if (!ok()) return;
+      lock();
+      await wait(stage, 2600); if (!ok()) return;
+      for (const ch of "hunter2!") { inp.value += ch; await sleep(110); if (!ok()) return; }
+      await wait(stage, 500); if (!ok()) return;
+      await unlock();
+      await wait(stage, 2500); if (!ok()) return;
+    }
+  })();
 })();
 
 // ══ Infinite canvas overview ═════════════════════════════════
