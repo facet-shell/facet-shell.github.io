@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Rubik:wght@300;400;500;600&display=swap">
 <!-- Only the icons the page uses; the list has to stay in alphabetical order -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0&icon_names=add_comment,alarm,apps,arrow_back,arrow_forward,auto_awesome,bedtime,bluetooth,bluetooth_disabled,bolt,brightness_low,brightness_medium,brush,calculate,call,call_end,chat,check,check_box,check_box_outline_blank,check_circle,chevron_right,clear_all,cloud,code,coffee,commit,content_copy,content_paste,dashboard,description,dns,do_not_disturb_on,draw,expand_more,fit_screen,folder,folder_open,forum,graphic_eq,group,group_add,headset_mic,image,info,keyboard,keyboard_command_key,language,light_mode,link,local_fire_department,local_florist,lock,logout,merge,mic,mic_off,monitoring,mood,movie,movie_edit,music_note,notifications,open_in_new,partly_cloudy_day,pause,pending,person,photo_library,play_arrow,play_circle,power_settings_new,radio_button_checked,rainy,rate_review,reply,restart_alt,screenshot_region,search,settings,skip_next,skip_previous,snooze,sports_esports,stadia_controller,sunny,system_update_alt,tag,terminal,timer,touch_app,travel_explore,tune,view_kanban,volume_down,volume_mute,volume_off,volume_up,wallpaper,wifi,wifi_off,zoom_in,zoom_out&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0&icon_names=add_comment,alarm,apps,arrow_back,arrow_forward,auto_awesome,bedtime,bluetooth,bluetooth_disabled,bolt,brightness_low,brightness_medium,brush,calculate,call,call_end,chat,check,check_box,check_box_outline_blank,check_circle,chevron_right,clear_all,close,cloud,code,coffee,commit,content_copy,content_paste,dashboard,description,dns,do_not_disturb_on,draw,expand_more,fit_screen,folder,folder_open,forum,graphic_eq,group,group_add,headset_mic,image,info,keyboard,keyboard_command_key,language,light_mode,link,local_fire_department,local_florist,lock,logout,menu,merge,mic,mic_off,monitoring,mood,movie,movie_edit,music_note,notifications,open_in_new,partly_cloudy_day,pause,pending,person,photo_library,play_arrow,play_circle,power_settings_new,radio_button_checked,rainy,rate_review,reply,restart_alt,screenshot_region,search,settings,skip_next,skip_previous,snooze,sports_esports,stadia_controller,sunny,system_update_alt,tag,terminal,timer,touch_app,travel_explore,tune,view_kanban,volume_down,volume_mute,volume_off,volume_up,wallpaper,wifi,wifi_off,zoom_in,zoom_out&display=block">
 <style>
 /* The page is drawn in the bloom look. --t-* are the Material You tones of the bloom theme
    picked on the page (cli/themes/bloom/*.json), --u-* the colors of the tui theme
@@ -35,6 +35,39 @@
   /* Theme.qml: rounding */
   --r-normal: 14px; --r-medium: 18px; --r-large: 22px; --r-drawer: 28px;
 }
+/* The tokens are registered colors, so a theme or style change fades every color over
+   (gradients, shadows and the light-mode mixes included) without touching any element's own
+   transitions. */
+@property --t-surface { syntax: "<color>"; inherits: true; initial-value: #141218; }
+@property --t-container { syntax: "<color>"; inherits: true; initial-value: #1d1b20; }
+@property --t-high { syntax: "<color>"; inherits: true; initial-value: #2b2930; }
+@property --t-highest { syntax: "<color>"; inherits: true; initial-value: #36343b; }
+@property --t-primary { syntax: "<color>"; inherits: true; initial-value: #d0bcff; }
+@property --t-on-primary { syntax: "<color>"; inherits: true; initial-value: #381e72; }
+@property --t-pc { syntax: "<color>"; inherits: true; initial-value: #4f378b; }
+@property --t-on-pc { syntax: "<color>"; inherits: true; initial-value: #eaddff; }
+@property --t-secondary { syntax: "<color>"; inherits: true; initial-value: #ccc2dc; }
+@property --t-sc { syntax: "<color>"; inherits: true; initial-value: #4a4458; }
+@property --t-tertiary { syntax: "<color>"; inherits: true; initial-value: #efb8c8; }
+@property --t-text { syntax: "<color>"; inherits: true; initial-value: #e6e0e9; }
+@property --t-dim { syntax: "<color>"; inherits: true; initial-value: #cac4d0; }
+@property --t-outline { syntax: "<color>"; inherits: true; initial-value: #49454f; }
+@property --t-page { syntax: "<color>"; inherits: true; initial-value: #0e0d11; }
+@property --t-warn { syntax: "<color>"; inherits: true; initial-value: #f2c97d; }
+@property --u-bg { syntax: "<color>"; inherits: true; initial-value: #0b0c1f; }
+@property --u-surface { syntax: "<color>"; inherits: true; initial-value: #13153a; }
+@property --u-surface2 { syntax: "<color>"; inherits: true; initial-value: #1e2256; }
+@property --u-primary { syntax: "<color>"; inherits: true; initial-value: #5d6fe8; }
+@property --u-secondary { syntax: "<color>"; inherits: true; initial-value: #93a4f7; }
+@property --u-accent { syntax: "<color>"; inherits: true; initial-value: #a48cf2; }
+@property --u-text { syntax: "<color>"; inherits: true; initial-value: #e1e4ff; }
+@property --u-dim { syntax: "<color>"; inherits: true; initial-value: #bcc1ea; }
+@property --u-muted { syntax: "<color>"; inherits: true; initial-value: #8086b8; }
+@property --u-frame { syntax: "<color>"; inherits: true; initial-value: #545b96; }
+@property --u-danger { syntax: "<color>"; inherits: true; initial-value: #ff6b9a; }
+@property --u-warn { syntax: "<color>"; inherits: true; initial-value: #f2c97d; }
+@property --u-ok { syntax: "<color>"; inherits: true; initial-value: #6ee0b6; }
+:root { transition: --t-surface .6s cubic-bezier(.2, 0, 0, 1), --t-container .6s cubic-bezier(.2, 0, 0, 1), --t-high .6s cubic-bezier(.2, 0, 0, 1), --t-highest .6s cubic-bezier(.2, 0, 0, 1), --t-primary .6s cubic-bezier(.2, 0, 0, 1), --t-on-primary .6s cubic-bezier(.2, 0, 0, 1), --t-pc .6s cubic-bezier(.2, 0, 0, 1), --t-on-pc .6s cubic-bezier(.2, 0, 0, 1), --t-secondary .6s cubic-bezier(.2, 0, 0, 1), --t-sc .6s cubic-bezier(.2, 0, 0, 1), --t-tertiary .6s cubic-bezier(.2, 0, 0, 1), --t-text .6s cubic-bezier(.2, 0, 0, 1), --t-dim .6s cubic-bezier(.2, 0, 0, 1), --t-outline .6s cubic-bezier(.2, 0, 0, 1), --t-page .6s cubic-bezier(.2, 0, 0, 1), --t-warn .6s cubic-bezier(.2, 0, 0, 1), --u-bg .6s cubic-bezier(.2, 0, 0, 1), --u-surface .6s cubic-bezier(.2, 0, 0, 1), --u-surface2 .6s cubic-bezier(.2, 0, 0, 1), --u-primary .6s cubic-bezier(.2, 0, 0, 1), --u-secondary .6s cubic-bezier(.2, 0, 0, 1), --u-accent .6s cubic-bezier(.2, 0, 0, 1), --u-text .6s cubic-bezier(.2, 0, 0, 1), --u-dim .6s cubic-bezier(.2, 0, 0, 1), --u-muted .6s cubic-bezier(.2, 0, 0, 1), --u-frame .6s cubic-bezier(.2, 0, 0, 1), --u-danger .6s cubic-bezier(.2, 0, 0, 1), --u-warn .6s cubic-bezier(.2, 0, 0, 1), --u-ok .6s cubic-bezier(.2, 0, 0, 1); }
 /* The token layer. Dark: the theme's tones as they are. */
 :root, .dark-tones {
   --page: var(--t-page); --surface: var(--t-surface); --container: var(--t-container); --high: var(--t-high); --highest: var(--t-highest);
@@ -106,20 +139,36 @@ kbd { display: inline-block; padding: 0 6px; border-radius: 7px; background: var
 .seg button[aria-pressed="true"] { color: var(--on-pc); }
 .seg button .ms { font-size: 18px; }
 
-/* ── Header: bloom's bar, pills on the surface; the style switch for every demo ── */
-.top { position: sticky; top: 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px);
-  background: color-mix(in srgb, var(--surface) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
-.top .wrap { display: flex; align-items: center; gap: 8px; min-height: 64px; }
+/* ── Header: one floating pill like bloom's bar; it shrinks a little once you scroll ── */
+.top { position: sticky; top: 0; z-index: 50; padding: calc(10px + env(safe-area-inset-top, 0px)) 0 6px; pointer-events: none; transition: padding var(--d-medium) var(--emph); }
+.topbar { pointer-events: auto; position: relative; display: flex; align-items: center; gap: 8px; height: 60px; padding: 0 10px; border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 74%, transparent); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--outline) 45%, transparent), 0 18px 40px -22px #000a;
+  transition: height var(--d-medium) var(--emph), box-shadow var(--d-medium), background-color var(--d-color); }
+.top.small { padding-top: calc(6px + env(safe-area-inset-top, 0px)); }
+.top.small .topbar { height: 50px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--outline) 45%, transparent), 0 10px 30px -18px #000c; }
 .brand { display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 14px 0 8px; border-radius: 999px; background: var(--container); color: var(--text); flex: none; }
 .brand:hover { text-decoration: none; }
 .brand .mark { width: 26px; height: 26px; }
 .brand .word { height: 16px; width: auto; }
+/* The facet glint, as in the org's animated mark: the facets light up one after another, then a soft glint runs over them */
+.mark .f { opacity: 0; transform-box: view-box; transform-origin: 50% 50%; animation: fin .55s cubic-bezier(.2, .9, .3, 1.25) forwards; }
+.mark .g { opacity: 0; animation: glint 7s ease-in-out infinite; }
+@keyframes fin { from { opacity: 0; transform: scale(.6) rotate(-12deg); } to { opacity: 1; transform: none; } }
+@keyframes glint { 0%, 100% { opacity: 0; } 3% { opacity: .5; } 9% { opacity: 0; } }
 .sty { display: flex; align-items: center; gap: 8px; margin-left: 4px; }
 .sty small { color: var(--dim); font-size: 12.5px; white-space: nowrap; }
-.top nav { display: flex; align-items: center; gap: 2px; margin-left: auto; padding: 4px; border-radius: 999px; background: var(--container); font-size: 14px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
-.top nav::-webkit-scrollbar { display: none; }
-.top nav a { display: block; padding: 6px 12px; border-radius: 999px; color: var(--dim); white-space: nowrap; }
-.top nav a:hover { color: var(--text); background: var(--hover); text-decoration: none; }
+.top nav { position: relative; display: flex; align-items: center; gap: 2px; margin-left: auto; padding: 4px; border-radius: 999px; font-size: 14px; min-width: 0; }
+/* the current section: a pill that slides under its link */
+.top nav .ind { position: absolute; left: 0; top: 4px; bottom: 4px; width: 0; border-radius: 999px; background: var(--sc); opacity: 0;
+  transition: transform var(--d-spring) var(--spring), width var(--d-spring) var(--spring), opacity var(--d-small); }
+.top nav a { position: relative; z-index: 1; display: block; padding: 6px 12px; border-radius: 999px; color: var(--dim); white-space: nowrap; transition: color var(--d-small); }
+.top nav a:hover, .top nav a[aria-current] { color: var(--text); text-decoration: none; }
+.menub { display: none; width: 40px; height: 40px; border-radius: 50%; place-items: center; background: var(--container); color: var(--text); flex: none; transition: border-radius var(--d-spring) var(--spring); }
+.menub .ms.x { display: none; }
+.top.open .menub { border-radius: 14px; }
+.top.open .menub .ms.x { display: inline-block; }
+.top.open .menub .ms.m { display: none; }
 
 /* ── Hero and sections ── */
 .hero { position: relative; padding-block: 52px 0; }
@@ -142,7 +191,7 @@ kbd { display: inline-block; padding: 0 6px; border-radius: 7px; background: var
 .dots button[aria-pressed="true"] i { box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--text); border-radius: 9px; }
 .tname { color: var(--dim); font-size: 14px; }
 .tname code { color: var(--text); }
-section { padding: 88px 0 0; scroll-margin-top: 64px; }
+section { padding: 88px 0 0; scroll-margin-top: 92px; }
 .lab { margin: 0 0 6px; font-size: 13.5px; font-weight: 500; color: var(--primary); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .lab kbd { background: var(--container); }
 h2 { margin: 0; font-size: clamp(26px, 3.4vw, 38px); line-height: 1.15; font-weight: 600; letter-spacing: -.015em; }
@@ -387,16 +436,20 @@ button.chip:active { transform: scale(.92); }
 .pr .ci { font-size: 17px; color: var(--ok); }
 .pr .ci.run { color: var(--tertiary); }
 .p-perf { grid-template-columns: auto 1fr; gap: 10px; }
-.gauges { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 8px; align-content: start; }
-.gauge { position: relative; width: 100px; height: 92px; text-align: center; }
-.gauge svg { width: 100px; height: 100px; transform: rotate(135deg); }
-.gauge circle { fill: none; stroke-width: 9; stroke-linecap: round; }
-.gauge .tr { stroke: var(--high); stroke-dasharray: 160.2 213.6; }
-.gauge .vl { stroke: var(--primary); stroke-dasharray: 0 213.6; transition: stroke-dasharray .8s var(--emph), stroke var(--d-small); }
-.gauge.hot .vl { stroke: var(--warn); }
-.gauge div { position: absolute; inset: 30px 0 auto; line-height: 1.1; }
-.gauge b { display: block; font-size: 19px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.gauge small { color: var(--dim); font-size: 11.5px; }
+/* Gauge.qml: a 110 px ring, 10 thick, open at the bottom; the number inside, label and detail under it */
+.gauges { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; align-content: start; }
+.gauge { display: grid; justify-items: center; gap: 2px; width: 150px; text-align: center; line-height: 1.3; }
+.gauge .ring { position: relative; width: 110px; height: 110px; }
+.gauge svg { display: block; width: 110px; height: 110px; transform: rotate(135deg); }
+.gauge circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+.gauge .tr { stroke: var(--high); stroke-dasharray: 235.6 314.2; }
+.gauge .vl { stroke: var(--primary); stroke-dasharray: 0 314.2; transition: stroke-dasharray .8s var(--emph), stroke var(--d-small); }
+.gauge.warn .vl { stroke: var(--warn); }
+.gauge.err .vl { stroke: var(--err); }
+.gauge b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.gauge .gl { color: var(--dim); font-size: 13px; margin-top: -6px; }
+.gauge .gd { color: var(--dim); font-size: 12px; }
+.gauge .gd:empty { display: none; }
 .tasks { display: grid; gap: 2px; align-content: start; }
 .task { display: grid; grid-template-columns: 28px 1fr 46px 70px auto; gap: 10px; align-items: center; padding: 4px 8px; border-radius: 12px; font-size: 13px;
   transition: opacity var(--d-small), transform var(--d-medium) var(--emph); }
@@ -815,12 +868,42 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: cent
 footer nav { display: flex; gap: 18px; flex-wrap: wrap; }
 footer a { color: var(--dim); }
 
+/* ── Motion on the page ── */
+/* On load: the bar, then the headline, the install box and the demo, one after another */
+@media (prefers-reduced-motion: no-preference) {
+  .ld { animation: up .8s var(--emph) both; animation-delay: calc(var(--i, 0) * 90ms); }
+  @keyframes up { from { opacity: 0; transform: translateY(16px); } }
+  /* Each section reveals as it scrolls in: heading, text, buttons, then the demo */
+  .rv { opacity: 0; transform: translateY(18px); }
+  .seen .rv { opacity: 1; transform: none; transition: opacity .6s var(--emph), transform .7s var(--emph); transition-delay: calc(var(--i, 0) * 70ms); }
+}
+/* The hero desktop builds up: frame, bar, windows (the pills under it follow in the load order) */
+.d-bloom .win { transition: opacity .5s var(--emph), transform .6s var(--emph); }
+.d-bloom.pre-frame .hole { opacity: 0; }
+.d-bloom.pre-bar .bbar { transform: translateY(-110%); opacity: 0; }
+.d-bloom.pre-win .win { opacity: 0; transform: translateY(18px) scale(.98); }
+.d-tui > .tw, .d-tui > .t-bar { transition: filter .9s var(--emph), transform .9s var(--emph), opacity .5s var(--emph); }
+.d-tui.pre-bar .t-bar, .d-tui.pre-win > .tw { opacity: 0; }
+/* A drawer's content settles in after the drawer itself, row by row */
+.dr:not(.dr-o):not(.dr-m) .in > * { opacity: 0; transform: translateY(10px); transition: opacity .12s, transform .12s; }
+.dr.open:not(.dr-o):not(.dr-m) .in > * { opacity: 1; transform: none; transition: opacity var(--d-medium) var(--emph), transform var(--d-in) var(--emph); transition-delay: 90ms; }
+.dr.open .in > :nth-child(2) { transition-delay: 140ms; } .dr.open .in > :nth-child(3) { transition-delay: 190ms; } .dr.open .in > :nth-child(4) { transition-delay: 240ms; }
+.dr.open .in > :nth-child(5) { transition-delay: 290ms; } .dr.open .in > :nth-child(n + 6) { transition-delay: 340ms; }
+/* The phone menu: a small sheet under the pill */
+@keyframes sheet { from { opacity: 0; transform: translateY(-8px) scale(.98); } }
+
 @media (max-width: 860px) {
-  .top .wrap { flex-wrap: wrap; gap: 6px; padding-block: 8px; min-height: 0; }
-  .top nav { margin-left: 0; width: 100%; order: 3; }
-  .sty { margin-left: auto; }
+  .topbar { gap: 6px; padding: 0 8px; }
   .brand .word { display: none; }
-  .brand { padding: 0 8px; }
+  .brand { padding: 0 6px; }
+  .sty small { font-size: 11.5px; }
+  .menub { display: grid; margin-left: auto; }
+  .top nav { display: none; position: absolute; left: 0; right: 0; top: calc(100% + 8px); flex-direction: column; align-items: stretch; padding: 8px; border-radius: var(--r-large);
+    background: var(--container); box-shadow: 0 24px 50px -24px #000c; transform-origin: 50% 0; }
+  .top.open nav { display: flex; animation: sheet .35s var(--emph); }
+  .top nav .ind { display: none; }
+  .top nav a { padding: 10px 14px; border-radius: 14px; }
+  .top nav a[aria-current] { background: var(--sc); }
   .hero { padding-top: 30px; }
   .cmd { border-radius: var(--r-large); flex-wrap: wrap; padding: 12px 12px 12px 16px; }
   .cmd code { flex-basis: 100%; }
@@ -835,14 +918,16 @@ footer a { color: var(--dim); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
   html { scroll-behavior: auto; }
+  .mark .f { animation: none; opacity: 1; }
+  .mark .g { animation: none; opacity: 0; }
 }
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <!-- The mark (an Asscher-cut gem from above) and the wordmark, drawn once and reused -->
+  <defs><mask id="cut" maskUnits="userSpaceOnUse" x="76" y="76" width="360" height="360"><path d="M138 76L374 76L436 138L436 374L374 436L138 436L76 374L76 138Z" fill="#fff"/><path d="M188 158L324 158L354 188L354 324L324 354L188 354L158 324L158 188ZM138 76L188 158M374 76L324 158M436 138L354 188M436 374L354 324M374 436L324 354M138 436L188 354M76 374L158 324M76 138L158 188" fill="none" stroke="#000" stroke-width="16"/></mask></defs>
   <symbol id="mark" viewBox="76 76 360 360">
-    <mask id="cut" maskUnits="userSpaceOnUse" x="76" y="76" width="360" height="360"><path d="M138 76L374 76L436 138L436 374L374 436L138 436L76 374L76 138Z" fill="#fff"/><path d="M188 158L324 158L354 188L354 324L324 354L188 354L158 324L158 188ZM138 76L188 158M374 76L324 158M436 138L354 188M436 374L354 324M374 436L324 354M138 436L188 354M76 374L158 324M76 138L158 188" fill="none" stroke="#000" stroke-width="16"/></mask>
     <g mask="url(#cut)">
       <path style="fill:var(--tertiary)" d="M138 76L374 76L324 158L188 158Z"/><path style="fill:var(--tertiary)" d="M374 76L436 138L354 188L324 158Z"/><path style="fill:var(--primary)" d="M436 138L436 374L354 324L354 188Z"/>
       <path style="fill:color-mix(in srgb, var(--primary) 62%, var(--surface))" d="M436 374L374 436L324 354L354 324Z"/><path style="fill:color-mix(in srgb, var(--primary) 62%, var(--surface))" d="M374 436L138 436L188 354L324 354Z"/><path style="fill:var(--primary)" d="M138 436L76 374L158 324L188 354Z"/>
@@ -855,10 +940,11 @@ footer a { color: var(--dim); }
   </symbol>
 </svg>
 
-<header class="top">
+<header class="top" id="top">
   <div class="wrap">
+   <div class="topbar ld" style="--i:0">
     <a class="brand" href="#" aria-label="facet">
-      <svg class="mark" aria-hidden="true"><use href="#mark"/></svg>
+      <svg class="mark" viewBox="76 76 360 360" aria-hidden="true"><g mask="url(#cut)"><path class="f" style="fill:var(--tertiary);animation-delay:0.00s" d="M138 76L374 76L324 158L188 158Z"/><path class="g" fill="#fff" style="animation-delay:1.60s" d="M138 76L374 76L324 158L188 158Z"/><path class="f" style="fill:var(--tertiary);animation-delay:0.07s" d="M374 76L436 138L354 188L324 158Z"/><path class="g" fill="#fff" style="animation-delay:1.69s" d="M374 76L436 138L354 188L324 158Z"/><path class="f" style="fill:var(--primary);animation-delay:0.14s" d="M436 138L436 374L354 324L354 188Z"/><path class="g" fill="#fff" style="animation-delay:1.78s" d="M436 138L436 374L354 324L354 188Z"/><path class="f" style="fill:color-mix(in srgb, var(--primary) 62%, var(--surface));animation-delay:0.21s" d="M436 374L374 436L324 354L354 324Z"/><path class="g" fill="#fff" style="animation-delay:1.87s" d="M436 374L374 436L324 354L354 324Z"/><path class="f" style="fill:color-mix(in srgb, var(--primary) 62%, var(--surface));animation-delay:0.28s" d="M374 436L138 436L188 354L324 354Z"/><path class="g" fill="#fff" style="animation-delay:1.96s" d="M374 436L138 436L188 354L324 354Z"/><path class="f" style="fill:var(--primary);animation-delay:0.35s" d="M138 436L76 374L158 324L188 354Z"/><path class="g" fill="#fff" style="animation-delay:2.05s" d="M138 436L76 374L158 324L188 354Z"/><path class="f" style="fill:color-mix(in srgb, var(--primary) 55%, var(--tertiary));animation-delay:0.42s" d="M76 374L76 138L158 188L158 324Z"/><path class="g" fill="#fff" style="animation-delay:2.14s" d="M76 374L76 138L158 188L158 324Z"/><path class="f" style="fill:var(--text);animation-delay:0.49s" d="M76 138L138 76L188 158L158 188Z"/><path class="g" fill="#fff" style="animation-delay:2.23s" d="M76 138L138 76L188 158L158 188Z"/><path class="f" style="fill:var(--primary);animation-delay:0.56s" d="M188 158L324 158L354 188L354 324L324 354L188 354L158 324L158 188Z"/><path class="g" fill="#fff" style="animation-delay:2.32s" d="M188 158L324 158L354 188L354 324L324 354L188 354L158 324L158 188Z"/></g></svg>
       <svg class="word" viewBox="-0.2 -0.2 53.4 14.4" aria-hidden="true"><use href="#word"/></svg>
     </a>
     <div class="sty">
@@ -868,7 +954,7 @@ footer a { color: var(--dim); }
       </div>
       <small>more coming</small>
     </div>
-    <nav aria-label="Sections">
+    <nav aria-label="Sections"><i class="ind"></i>
       <a href="#launcher">launcher</a>
       <a href="#games">games</a>
       <a href="#lockscreen">lock</a>
@@ -878,6 +964,8 @@ footer a { color: var(--dim); }
       <a href="https://github.com/facet-shell/facet">docs</a>
       <a href="https://github.com/orgs/facet-shell/projects/1">board</a>
     </nav>
+    <button class="menub" type="button" aria-label="menu" aria-expanded="false"><span class="ms m">menu</span><span class="ms x">close</span></button>
+   </div>
   </div>
 </header>
 
@@ -964,7 +1052,7 @@ footer a { color: var(--dim); }
       <button class="b" type="button" data-g="invite"><span class="ms">group_add</span>a Steam invite</button>
       <button class="b" type="button" data-g="friend"><span class="ms">person</span>friend online</button>
       <button class="b" type="button" data-g="song"><span class="ms">skip_next</span>next song</button>
-      <button class="b" type="button" data-g="voice" aria-pressed="true"><span class="ms">headset_mic</span>voice channel</button>
+      <button class="b" type="button" data-g="voice" aria-pressed="false"><span class="ms">headset_mic</span>voice channel</button>
       <span class="say">Drag the voice overlay. Song changes and friends coming online wait until you quit.</span>
     </div>
     <div class="stage" data-desk="games" data-w="1280" data-h="720" data-parts="bar tray windows hist menu pops np voice game"></div>
@@ -1707,9 +1795,10 @@ function setGame(d, on, name) {
   if (on) {
     if (d.open) closeAll(d);
     later(() => mini(d, name ? `Game mode on: ${name}` : "Game mode on", "popups turn into one line", "sports_esports"), 500);
-  } else if (d.waiting?.length) {
-    // What waited comes now
-    d.waiting.splice(0).slice(-2).forEach((n, i) => later(() => notify(d, { ...n }), 400 + i * 500));
+  } else {
+    // Leaving the game leaves the voice channel too; what waited comes now
+    if (d.voice) setVoice(d, false);
+    if (d.waiting?.length) d.waiting.splice(0).slice(-2).forEach((n, i) => later(() => notify(d, { ...n }), 400 + i * 500));
   }
 }
 
@@ -1854,13 +1943,19 @@ function osd(d, k) {
 let seed = 7;
 const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 const HEAT = Array.from({ length: 30 * 7 }, (_, i) => { const r = rnd(); return i % 7 > 4 ? (r < .6 ? 0 : 1) : r < .25 ? 0 : r < .55 ? 1 : r < .85 ? 2 : 3; });
-const GAUGES = [["CPU", "%", 100], ["GPU", "%", 100], ["RAM", " GB", 32], ["GPU temp", "°", 100]];
+// PerformanceTab.qml: value, number in the ring, label and detail under it, warn from 85 % (the temperature from 80 %)
+const GAUGES = [
+  { num: v => Math.round(v) + "%", label: () => "CPU", detail: g => `${g ? 78 : 62}°`, warn: .85 },
+  { num: v => Math.round(v) + "%", label: () => "GPU", detail: g => `VRAM ${g ? "9.4" : "2.1"} of 16 GB`, warn: .85 },
+  { num: v => Math.round(v) + "%", label: v => `RAM · ${(v / 100 * 32).toFixed(1)} of 32 GB`, detail: () => "", warn: .85 },
+  { num: v => Math.round(v) + "°", label: () => "GPU temp", detail: () => "", warn: .8 }
+];
 const TASKS = [
   { n: "Zen Browser", cpu: 6, mem: "2.1 GB", d: "12 processes" }, { n: "Steam", cpu: 2, mem: "640 MB", d: "steamwebhelper ×6" }, { n: "Vesktop", cpu: 1, mem: "520 MB", d: "5 processes" },
   { n: "Zed", cpu: 0, mem: "280 MB", d: "2 processes" }, { n: "Spotify", cpu: 1, mem: "310 MB", d: "4 processes" }, { n: "Ghostty", cpu: 0, mem: "90 MB", d: "fish, htop" }
 ];
 function initDash(d) {
-  d.q(".gauges").innerHTML = GAUGES.map(([k]) => `<div class="gauge"><svg viewBox="0 0 100 100"><circle class="tr" cx="50" cy="50" r="34"/><circle class="vl" cx="50" cy="50" r="34"/></svg><div><b>0</b><small>${k}</small></div></div>`).join("");
+  d.q(".gauges").innerHTML = GAUGES.map(() => `<div class="gauge"><span class="ring"><svg viewBox="0 0 110 110"><circle class="tr" cx="55" cy="55" r="50"/><circle class="vl" cx="55" cy="55" r="50"/></svg><b></b></span><small class="gl"></small><small class="gd"></small></div>`).join("");
   renderGh(d, "me"); renderTasks(); renderCal();
 }
 function dashTab(d, v) {
@@ -1893,12 +1988,12 @@ function renderGh(d, scope) {
   }
 }
 function perfTick(d) {
-  const base = d.gaming ? [62, 94, 18.2, 74] : [14, 8, 11.4, 50];
+  const base = d.gaming ? [62, 94, 57, 74] : [11, 7, 37, 49];
   $$(".gauge", d.b).forEach((g, i) => {
-    const v = Math.max(1, base[i] + (rnd() - .5) * (i === 2 ? 1 : 12)), f = Math.min(1, v / GAUGES[i][2]);
-    $(".vl", g).style.strokeDasharray = `${(f * 160.2).toFixed(1)} 213.6`;
-    $("b", g).textContent = (i === 2 ? v.toFixed(1) : Math.round(v)) + GAUGES[i][1];
-    g.classList.toggle("hot", i === 3 ? v > 70 : f > .85);
+    const G = GAUGES[i], v = Math.min(100, Math.max(1, base[i] + (rnd() - .5) * (i === 2 ? 2 : 6))), f = v / 100;
+    $(".vl", g).style.strokeDasharray = `${(f * 235.6).toFixed(1)} 314.2`;
+    $("b", g).textContent = G.num(v); $(".gl", g).textContent = G.label(v); $(".gd", g).textContent = G.detail(d.gaming);
+    g.classList.toggle("warn", f >= G.warn && f < G.warn + .1); g.classList.toggle("err", f >= G.warn + .1);
   });
 }
 setInterval(() => { for (const d of Object.values(DESKS)) if (d.visible && d.p.has("dash") && d.q('[data-p="perf"]').classList.contains("on") && (d.open === "dash" || d.fixed === "dash")) perfTick(d); }, 1500);
@@ -2251,7 +2346,7 @@ function heroTour(d) {
   if (d.toured || reduce || d.auto === false) return;
   d.toured = true; d.auto = true;
   const q = () => lField(d);
-  runSteps(d, [[700, () => playSong(d, 1)], [3000, () => notify(d, NOTES.dm)], [2600, () => openDrawer(d, "launch", { q: "", quiet: true })],
+  runSteps(d, [[Math.max(700, (d.bootUntil || 0) - Date.now()), () => playSong(d, 1)], [3000, () => notify(d, NOTES.dm)], [2600, () => openDrawer(d, "launch", { q: "", quiet: true })],
     ...[..."spo"].map((ch, i) => [i ? 260 : 900, () => { q().value += ch; lInput(d); }]), [1700, () => closeAll(d)], [900, () => openDrawer(d, "cc", { quiet: true })], [2600, () => closeAll(d)],
     [200, () => { d.auto = undefined; }]]);
 }
@@ -2391,11 +2486,59 @@ async function copy(b) {
 for (const st of $$("[data-desk]")) buildDesk(st);
 D("hero").onShow = () => heroTour(D("hero"));
 D("lockd").onShow = () => lockLoop(D("lockd"));
-setVoice(D("games"), true); renderVoice(D("games"));
+renderVoice(D("games"));
 renderSong(); renderTimer(); renderHist(); tick();
 setStyle(S.style);
 document.fonts?.ready.then(segsAll);
 requestAnimationFrame(segsAll);
+
+// ── Motion on the page: things come in staggered on load and as you scroll ──
+{
+  // The hero in load order; the buttons under the desktop wait for it to build up
+  $$(".hero > *").forEach((el, i) => { el.classList.add("ld"); el.style.setProperty("--i", el.classList.contains("ctrls") ? 13 : i + 1); });
+  for (const sec of $$("main section")) {
+    if (sec.hidden) continue;
+    $$(":scope > .wrap > *", sec).forEach((el, i) => { el.classList.add("rv"); el.style.setProperty("--i", i); });
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } }), { threshold: .1, rootMargin: "0px 0px -6% 0px" });
+  for (const sec of $$("main section")) io.observe(sec);
+  // The hero desktop: frame, bar, then the windows
+  const d = D("hero");
+  if (!reduce) {
+    const layers = [d.b, d.t];
+    for (const l of layers) l.classList.add("pre-frame", "pre-bar", "pre-win");
+    d.bootUntil = Date.now() + 1400;
+    setTimeout(() => layers.forEach(l => l.classList.remove("pre-frame")), 450);
+    setTimeout(() => layers.forEach(l => l.classList.remove("pre-bar")), 700);
+    setTimeout(() => layers.forEach(l => l.classList.remove("pre-win")), 950);
+  }
+}
+
+// ── The top bar: the current section, a smaller pill once you scroll, the menu on phones ──
+{
+  const hdr = $("#top"), nav = $("#top nav"), ind = $(".ind", nav), links = $$('a[href^="#"]', nav), menub = $(".menub", hdr);
+  // Sections without a link of their own count for the nearest one
+  const NEAR = { dashboard: "launcher", controlcenter: "launcher", styles: "themes", rest: "themes", media: "themes", repos: "install" };
+  let cur = null;
+  function navMove() {
+    const a = links.find(x => x.getAttribute("href") === "#" + cur);
+    for (const x of links) x === a ? x.setAttribute("aria-current", "true") : x.removeAttribute("aria-current");
+    if (!a) { ind.style.opacity = 0; return; }
+    ind.style.opacity = 1; ind.style.width = a.offsetWidth + "px"; ind.style.transform = `translateX(${a.offsetLeft}px)`;
+  }
+  const band = { rootMargin: "-25% 0px -60% 0px" };
+  const spy = new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting) { const id = NEAR[e.target.id] || e.target.id; if (id !== cur) { cur = id; navMove(); } } }, band);
+  for (const sec of $$("main section[id]")) spy.observe(sec);
+  // Back at the top nothing is current
+  new IntersectionObserver(([e]) => { if (e.isIntersecting && cur) { cur = null; navMove(); } }, band).observe($(".hero"));
+  addEventListener("resize", navMove);
+  addEventListener("scroll", () => hdr.classList.toggle("small", scrollY > 40), { passive: true });
+  const sheet = on => { hdr.classList.toggle("open", on); menub.setAttribute("aria-expanded", on); };
+  menub.addEventListener("click", () => sheet(!hdr.classList.contains("open")));
+  nav.addEventListener("click", e => { if (e.target.closest("a")) sheet(false); });
+  document.addEventListener("click", e => { if (hdr.classList.contains("open") && !e.target.closest(".topbar")) sheet(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && hdr.classList.contains("open")) sheet(false); });
+}
 // A segmented row that changes size (fonts, wrapping) moves its pill along
 const segRO = new ResizeObserver(es => es.forEach(e => segMove(e.target)));
 for (const x of $$(".seg")) segRO.observe(x);
