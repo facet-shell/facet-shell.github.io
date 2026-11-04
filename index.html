@@ -884,12 +884,12 @@ footer a { color: var(--dim); }
 <main>
 <div class="wrap hero">
   <h1>A desktop for <em>CachyOS</em> and Hyprland</h1>
-  <p class="lead">My Quickshell desktop. Discord, Steam, Spotify and the GoXLR are built in, and every app wears the same colors. It comes in styles: tui and bloom so far, switch them at the top.</p>
+  <p class="lead">Built on Quickshell. Discord, Steam, Spotify and my GoXLR hook into it, and all apps get the same colors. Two styles so far, tui and bloom.</p>
   <div class="cmd">
     <code id="cmd1">curl -fsSL <wbr>https://facet-shell.github.io/<wbr>install.sh | bash</code>
     <button class="b pri copy" data-copy="cmd1" type="button"><span class="ms" aria-hidden="true">content_copy</span><span>copy</span></button>
   </div>
-  <p class="note">A hobby project. It runs on my machine and still has bugs.</p>
+  <p class="note">Hobby project. Runs on my PC, has bugs.</p>
 
   <div class="themebar">
     <div class="dots" id="dots" role="group" aria-label="theme"></div>
@@ -912,8 +912,8 @@ footer a { color: var(--dim); }
 <section id="launcher" class="sec">
   <div class="wrap">
     <p class="lab">launcher <kbd>Super+Space</kbd></p>
-    <h2>One box for everything</h2>
-    <p class="t">Apps, Spotify, Discord, timers, emoji, files, the clipboard, the web, and Claude if you have it. A prefix picks the mode.</p>
+    <h2>Launcher</h2>
+    <p class="t">Apps, Spotify, Discord, timers, emoji, files, clipboard, web search, Claude. A letter and a space switch the mode.</p>
     <div class="ctrls" data-for="launch">
       <button class="b" type="button" data-type="s mid">s mid</button>
       <button class="b" type="button" data-type="= 2^10 / 4">= 2^10 / 4</button>
@@ -929,8 +929,8 @@ footer a { color: var(--dim); }
 <section id="dashboard" class="sec">
   <div class="wrap">
     <p class="lab">dashboard <span class="tag">bloom only</span></p>
-    <h2>The day at a glance</h2>
-    <p class="t">Weather, music, the month, your GitHub and what's eating the CPU. It drops out under the clock.</p>
+    <h2>Dashboard</h2>
+    <p class="t">Weather, what's playing, the calendar, GitHub, CPU. Comes down from the clock.</p>
     <div class="ctrls"></div>
     <div class="stage" data-desk="dash" data-w="1100" data-h="470" data-only="bloom" data-parts="bar tray dash menu pops np" data-fixed="dash"></div>
     <div class="shots" data-media="dashboard github"></div>
@@ -940,8 +940,8 @@ footer a { color: var(--dim); }
 <section id="controlcenter" class="sec">
   <div class="wrap">
     <p class="lab">control center <kbd>Super+C</kbd></p>
-    <h2>Toggles, sound and every app's volume</h2>
-    <p class="t">With a GoXLR the faders follow the hardware. Move one and you see it here.</p>
+    <h2>Control center</h2>
+    <p class="t">Toggles, the GoXLR faders and an app mixer. The faders move with the hardware.</p>
     <div class="ctrls" data-for="cc">
       <button class="b" type="button" data-osd="music"><span class="ms">tune</span>move a GoXLR fader</button>
       <button class="b" type="button" data-osd="vol"><span class="ms">volume_up</span>volume key</button>
@@ -955,14 +955,14 @@ footer a { color: var(--dim); }
 <section id="games" class="sec">
   <div class="wrap">
     <p class="lab">game mode</p>
-    <h2>Start a game and the desktop steps back</h2>
-    <p class="t">Game mode turns on by itself. Popups shrink to one line, and whatever can wait, waits.</p>
+    <h2>Game mode</h2>
+    <p class="t">Turns on when a game starts. Popups get small, the rest waits until you're done.</p>
     <div class="ctrls" data-for="games">
       <button class="b" type="button" data-g="game" aria-pressed="false"><span class="ms">sports_esports</span>start a game</button>
       <button class="b" type="button" data-g="dm"><span class="ms">chat</span>a message</button>
       <button class="b" type="button" data-g="call"><span class="ms">call</span>a call</button>
       <button class="b" type="button" data-g="invite"><span class="ms">group_add</span>a Steam invite</button>
-      <button class="b" type="button" data-g="friend"><span class="ms">person</span>a friend comes online</button>
+      <button class="b" type="button" data-g="friend"><span class="ms">person</span>friend online</button>
       <button class="b" type="button" data-g="song"><span class="ms">skip_next</span>next song</button>
       <button class="b" type="button" data-g="voice" aria-pressed="true"><span class="ms">headset_mic</span>voice channel</button>
       <span class="say">Drag the voice overlay. Song changes and friends coming online wait until you quit.</span>
@@ -975,11 +975,11 @@ footer a { color: var(--dim); }
 <section id="lockscreen" class="sec">
   <div class="wrap">
     <p class="lab">lockscreen <kbd>Super+L</kbd></p>
-    <h2>Locked behind a blur</h2>
-    <p class="t">It locks and unlocks by itself here. Click it and type anything. The login screen looks the same.</p>
+    <h2>Lockscreen</h2>
+    <p class="t">Clock, weather, music. Click it and type. The login screen looks the same.</p>
     <div class="ctrls" data-for="lockd">
       <button class="b" type="button" data-l="lock"><span class="ms">lock</span>lock</button>
-      <button class="b" type="button" data-l="note"><span class="ms">chat</span>a message while locked</button>
+      <button class="b" type="button" data-l="note"><span class="ms">chat</span>message</button>
       <span class="say">Any password works.</span>
     </div>
     <div class="stage" data-desk="lockd" data-w="1280" data-h="720" data-parts="bar tray windows lock pops np"></div>
@@ -990,8 +990,8 @@ footer a { color: var(--dim); }
 <section id="canvas" class="sec">
   <div class="wrap">
     <p class="lab">infinite canvas <kbd>Super+wheel</kbd></p>
-    <h2>A desktop without edges</h2>
-    <p class="t">Windows on one endless plane, and your screens are views onto it. Drag around, zoom out, click a window.</p>
+    <h2>Infinite canvas</h2>
+    <p class="t">All windows on one big plane, each screen shows a part of it. Drag, zoom, click a window.</p>
     <div class="ctrls">
       <button class="b ic" type="button" id="cvout" aria-label="zoom out"><span class="ms">zoom_out</span></button>
       <button class="b ic" type="button" id="cvin" aria-label="zoom in"><span class="ms">zoom_in</span></button>
@@ -1006,8 +1006,8 @@ footer a { color: var(--dim); }
 <section id="themes" class="sec">
   <div class="wrap">
     <p class="lab">themes <kbd>facet theme set</kbd></p>
-    <h2>Every app in the same colors</h2>
-    <p class="t">One command recolors the shell, the apps, the login screen and GRUB. Each style has its own themes.</p>
+    <h2>Themes</h2>
+    <p class="t">One command, and the shell, the apps, the login screen and GRUB change color.</p>
     <div class="ctrls"></div>
     <div class="tgrid" id="tgrid"></div>
     <div class="apps" id="apps" data-media="apps"></div>
@@ -1017,14 +1017,14 @@ footer a { color: var(--dim); }
 <section id="styles" class="sec">
   <div class="wrap">
     <p class="lab">styles <kbd>facet style</kbd></p>
-    <h2>Two looks, more later</h2>
-    <p class="t">A style is the look of all of it. This page is drawn in bloom.</p>
+    <h2>Styles</h2>
+    <p class="t">The look of everything. More later.</p>
     <div class="ctrls"></div>
     <div class="styles">
       <div class="style" data-media="style-bloom">
         <div class="prev pb" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="h"></div><div class="dw"><b></b><u></u><s></s></div></div>
         <h3>bloom</h3>
-        <p>Rounded, Material You colors, panels that slide out of a frame around the screen.</p>
+        <p>Round, Material You colors, panels slide out of a frame around the screen.</p>
         <div class="row2"><button class="b" type="button" data-use="bloom" aria-pressed="true">show bloom</button><code>facet style bloom</code></div>
       </div>
       <div class="style" data-media="style-tui">
@@ -1032,7 +1032,7 @@ footer a { color: var(--dim); }
 ● Style tui
   ✓ linked</em></i><i class="b3" data-l="zed"></i><i class="b4" data-l="vesktop"></i></div>
         <h3>tui</h3>
-        <p>Square frames and one monospace font, like a terminal.</p>
+        <p>Square frames, one mono font.</p>
         <div class="row2"><button class="b" type="button" data-use="tui" aria-pressed="false">show tui</button><code>facet style tui</code></div>
       </div>
     </div>
@@ -1041,20 +1041,20 @@ footer a { color: var(--dim); }
 
 <section id="rest" class="sec">
   <div class="wrap">
-    <h2>And the rest</h2>
+    <h2>Everything else</h2>
     <ul class="rest">
-      <li data-media="screenshot"><span class="ms">screenshot_region</span><span class="x">Screenshots that freeze the moment</span><kbd>Print</kbd></li>
-      <li data-media="recording"><span class="ms">radio_button_checked</span><span class="x">Screen recording with the sound you pick</span><kbd>Super+Shift+R</kbd></li>
-      <li data-media="editor"><span class="ms">movie_edit</span><span class="x">A video and picture editor</span></li>
+      <li data-media="screenshot"><span class="ms">screenshot_region</span><span class="x">Screenshots</span><kbd>Print</kbd></li>
+      <li data-media="recording"><span class="ms">radio_button_checked</span><span class="x">Screen recording, you pick what you hear</span><kbd>Super+Shift+R</kbd></li>
+      <li data-media="editor"><span class="ms">movie_edit</span><span class="x">Video and picture editor</span></li>
       <li data-media="draw"><span class="ms">draw</span><span class="x">Draw on the screen</span><kbd>Super+P</kbd></li>
-      <li data-media="media"><span class="ms">photo_library</span><span class="x">All your shots and clips in one place</span><kbd>Super+G</kbd></li>
-      <li data-media="wallpapers"><span class="ms">wallpaper</span><span class="x">Wallpapers, videos and Wallpaper Engine scenes</span><kbd>Super+W</kbd></li>
-      <li data-media="hotkeys"><span class="ms">keyboard_command_key</span><span class="x">Hold Super to see every hotkey</span></li>
-      <li data-media="settings"><span class="ms">settings</span><span class="x">A settings app</span><kbd>Super+,</kbd></li>
-      <li data-media="timers"><span class="ms">alarm</span><span class="x">Timers and alarms that ring until you answer</span></li>
-      <li data-media="updates"><span class="ms">system_update_alt</span><span class="x">Updates in one click, and a watchdog for the shell</span></li>
-      <li data-media="keyboard"><span class="ms">keyboard</span><span class="x">Lighting and keys for your keyboard, more boards coming</span><kbd>Super+K</kbd></li>
-      <li data-media="boot"><span class="ms">power_settings_new</span><span class="x">Login screen, boot splash and GRUB in your theme</span></li>
+      <li data-media="media"><span class="ms">photo_library</span><span class="x">Your shots and clips</span><kbd>Super+G</kbd></li>
+      <li data-media="wallpapers"><span class="ms">wallpaper</span><span class="x">Wallpapers, videos, Wallpaper Engine</span><kbd>Super+W</kbd></li>
+      <li data-media="hotkeys"><span class="ms">keyboard_command_key</span><span class="x">Hold Super for the hotkeys</span></li>
+      <li data-media="settings"><span class="ms">settings</span><span class="x">Settings</span><kbd>Super+,</kbd></li>
+      <li data-media="timers"><span class="ms">alarm</span><span class="x">Timers and alarms</span></li>
+      <li data-media="updates"><span class="ms">system_update_alt</span><span class="x">Updates, and a watchdog for the shell</span></li>
+      <li data-media="keyboard"><span class="ms">keyboard</span><span class="x">Keyboard lighting and keys</span><kbd>Super+K</kbd></li>
+      <li data-media="boot"><span class="ms">power_settings_new</span><span class="x">Login, boot splash and GRUB in the theme</span></li>
     </ul>
   </div>
 </section>
@@ -1075,7 +1075,7 @@ footer a { color: var(--dim); }
           <code id="cmd2">curl -fsSL <wbr>https://facet-shell.github.io/<wbr>install.sh | bash</code>
           <button class="b pri copy" data-copy="cmd2" type="button"><span class="ms" aria-hidden="true">content_copy</span><span>copy</span></button>
         </div>
-        <p>For Arch and CachyOS with Hyprland. It asks what you want and only fetches that. Your old configs get backed up first. Coming from frameshell? Use <a href="https://github.com/facet-shell/migrate-to-facet">migrate-to-facet</a>.</p>
+        <p>Arch or CachyOS with Hyprland. It asks what you want and only pulls that, old configs get backed up. Coming from frameshell? Use <a href="https://github.com/facet-shell/migrate-to-facet">migrate-to-facet</a>.</p>
       </div>
       <dl class="cmds">
         <dt>facet</dt><dd>a menu of the everyday stuff</dd>
@@ -1107,7 +1107,7 @@ footer a { color: var(--dim); }
       <a class="repo" href="https://github.com/facet-shell/dolphin"><b>dolphin</b>file manager theme</a>
       <a class="repo" href="https://github.com/facet-shell/facet-shell.github.io"><b>facet-shell.github.io</b>this page</a>
     </div>
-    <p class="hobby">It's a hobby project and still has bugs. What to try is in <a href="https://github.com/facet-shell/facet/blob/main/TESTING.md">TESTING.md</a>, ideas and bugs go on <a href="https://github.com/orgs/facet-shell/projects/1">the board</a>.</p>
+    <p class="hobby">Hobby project, has bugs. What to try is in <a href="https://github.com/facet-shell/facet/blob/main/TESTING.md">TESTING.md</a>, ideas and bugs go on <a href="https://github.com/orgs/facet-shell/projects/1">the board</a>.</p>
   </div>
 </section>
 </main>
