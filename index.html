@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>frameshell</title>
+<title>facet</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="A desktop for CachyOS and Hyprland that looks like a terminal: square frames, one monospace font, the same colors in every app.">
 <meta name="theme-color" content="#0b0c1f">
@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
 <style>
-  /* The six frameshell themes, the same values as themes/*.json in the cli repo. Periwinkle
+  /* The six facet themes, the same values as themes/*.json in the cli repo. Periwinkle
      until you pick another (remembered in this browser). One dark look, by design. */
   :root {
     --bg: #0b0c1f; --surface: #13153a; --surface2: #1e2256; --shadow: #3f4bb8;
@@ -953,31 +953,31 @@
 </svg>
 
 <header class="bar">
-  <div class="ws"><span class="b">[</span><a href="#top" class="on">1</a><a href="#launcher">2</a><a href="#themes">3</a><a href="#draw">4</a><a href="#capture">5</a><a href="#control">6</a><a href="#canvas">7</a><a href="#install">8</a><span class="b">]</span><span class="tb"><span class="b">─[</span><span class="title" id="title">frameshell · a terminal-styled desktop</span><span class="b">]</span></span></div>
+  <div class="ws"><span class="b">[</span><a href="#top" class="on">1</a><a href="#launcher">2</a><a href="#themes">3</a><a href="#draw">4</a><a href="#capture">5</a><a href="#control">6</a><a href="#canvas">7</a><a href="#install">8</a><span class="b">]</span><span class="tb"><span class="b">─[</span><span class="title" id="title">facet · a terminal-styled desktop</span><span class="b">]</span></span></div>
   <div class="clock" id="clock">--:--<small id="date"></small></div>
-  <div class="right"><span class="rec" id="bar-rec" hidden>● rec 0:00</span><span class="b">[</span><span id="bar-theme">periwinkle</span><span class="b gh">]─[</span><a class="gh" href="https://github.com/frame-shell">github</a><span class="b">]</span></div>
+  <div class="right"><span class="rec" id="bar-rec" hidden>● rec 0:00</span><span class="b">[</span><span id="bar-theme">periwinkle</span><span class="b gh">]─[</span><a class="gh" href="https://github.com/facet-shell">github</a><span class="b">]</span></div>
 </header>
 
 <main id="top">
 
   <section class="frame hero lit">
-    <span class="label">frameshell</span>
+    <span class="label">facet</span>
     <div>
       <h1 class="wordmark">frame<span class="p">shell</span><span class="cursor"></span></h1>
       <p class="lead">A desktop for CachyOS and Hyprland that looks like a terminal: square frames, one monospace font and the same colors in every app.</p>
       <div class="cmd">
         <span class="ps">❯</span>
-        <code id="install-cmd">curl -fsSL https://frame-shell.github.io/install.sh | bash</code>
+        <code id="install-cmd">curl -fsSL https://facet-shell.github.io/install.sh | bash</code>
         <button class="copy" data-copy="install-cmd">copy</button>
       </div>
-      <p class="note"><b>work in progress</b> · still early and still buggy, so expect things to break. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">What to try</a> · <a href="https://github.com/orgs/frame-shell/projects/1">the board</a></p>
+      <p class="note"><b>work in progress</b> · still early and still buggy, so expect things to break. <a href="https://github.com/facet-shell/facet/blob/main/TESTING.md">What to try</a> · <a href="https://github.com/orgs/facet-shell/projects/1">the board</a></p>
     </div>
     <div class="stage" data-w="640" data-h="400" id="hero-stage" role="img" aria-label="A short loop: the launcher answers with Claude, an app comes to you, drawing on the screen, a theme switch">
       <div class="screen hs grid-bg" id="hs" style="width:640px;height:400px">
         <div class="wipe grid-bg" id="hs-wipe"></div>
         <div class="sbar sw"><span><span class="bk">[</span><b>1</b> 2 3<span class="bk">]─[</span><span id="hs-title">ghostty</span><span class="bk">]</span></span><span><span class="c-tx" id="hs-clock">12:04</span>  <span class="c-mu">tue 3 nov</span></span><span><span class="bk">[</span><span class="c-se">♪ Midnight City</span><span class="bk">]─[</span>cpu <span class="c-tx">9%</span><span class="bk">]─[</span><span class="c-wa">↑ 12 (3 aur) · frame 2</span><span class="bk">]</span></span></div>
         <div class="win sw on" id="hw-term" style="left:22px;top:44px;width:300px;height:194px"><span class="lab">ghostty</span>
-          <div class="tx"><span class="c-p">❯</span> <span class="c-tx">frame status</span></div>
+          <div class="tx"><span class="c-p">❯</span> <span class="c-tx">facet status</span></div>
           <div class="tx"><span class="c-ok">✓</span> shell · linked</div>
           <div class="tx"><span class="c-ok">✓</span> terminal · linked</div>
           <div class="tx"><span class="c-ok">✓</span> spotify · discord · zed</div>
@@ -1030,11 +1030,11 @@
   </section>
 
   <section class="frame" id="themes">
-    <span class="label">themes <span class="k">· frame theme set</span></span>
+    <span class="label">themes <span class="k">· facet theme set</span></span>
     <h2>One command recolors the whole machine</h2>
     <p>One theme file colors the shell, Ghostty, fish and Starship, Spotify, Vesktop, Steam, Zed, Dolphin, Zen, GTK apps, GRUB, the boot splash, the text consoles and the GoXLR's lights. Pick one, this page switches too.</p>
     <div class="themes" id="theme-list"></div>
-    <div class="term-line"><span class="ps">❯</span> <span class="typed" id="theme-typed">frame theme set periwinkle</span> <span class="okk" id="theme-ok"></span></div>
+    <div class="term-line"><span class="ps">❯</span> <span class="typed" id="theme-typed">facet theme set periwinkle</span> <span class="okk" id="theme-ok"></span></div>
   </section>
 
   <section class="frame" id="draw">
@@ -1093,7 +1093,7 @@
       <div class="frame">
         <span class="label">paint</span>
         <ul class="stag">
-          <li>no app of its own: "new picture" in the media app, or "frameshell paint" in the launcher</li>
+          <li>no app of its own: "new picture" in the media app, or "facet paint" in the launcher</li>
           <li>an empty 1920×1080 page in the theme's background, white or transparent</li>
           <li>opens in the picture editor with the pen; Ctrl+S exports it</li>
         </ul>
@@ -1153,14 +1153,14 @@
   <section class="frame" id="lock">
     <span class="label">lockscreen <span class="k">· Super+L</span></span>
     <h2>Locked behind a blur of what you left</h2>
-    <p>Super+L, ten idle minutes or going to sleep take a snapshot of every screen and lock over it, blurred and darkened. Clock, password, weather and what plays sit on top; the other screens only show the blur. Unlocking plays it all backwards. <code>frame login</code> puts the same look on the login screen.</p>
+    <p>Super+L, ten idle minutes or going to sleep take a snapshot of every screen and lock over it, blurred and darkened. Clock, password, weather and what plays sit on top; the other screens only show the blur. Unlocking plays it all backwards. <code>facet login</code> puts the same look on the login screen.</p>
     <div class="row" style="margin-bottom:14px"><button class="btn" id="lk-lock">lock <kbd>Super</kbd><kbd>L</kbd></button><span class="muted" style="font-size:13px" id="lk-say">any password unlocks here</span></div>
     <div class="stage" data-w="1280" data-h="720" id="lk-stage">
       <div class="screen lk grid-bg" id="lk" style="width:1280px;height:720px">
         <div class="desk grid-bg">
           <div class="sbar"><span><span class="bk">[</span><b>1</b> 2 3<span class="bk">]─[</span>zen<span class="bk">]</span></span><span><span class="c-tx" id="lk-bar-clock">12:04</span>  <span class="c-mu">tue 3 nov</span></span><span><span class="bk">[</span><span class="c-se">♪ Midnight City · M83</span><span class="bk">]─[</span>cpu <span class="c-tx">7%</span><span class="bk">]─[</span>ram <span class="c-tx">6.1G</span><span class="bk">]</span></span></div>
           <div class="win on" style="left:40px;top:70px;width:690px;height:420px"><span class="lab">zen · frame-shell · GitHub</span><div class="ln p" style="width:40%"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:72%"></div><div class="ln" style="width:90%"></div><div class="ln p" style="width:30%"></div><div class="ln" style="width:64%"></div><div class="ln" style="width:80%"></div><div class="ln" style="width:55%"></div></div>
-          <div class="win" style="left:760px;top:70px;width:480px;height:260px"><span class="lab">ghostty</span><div class="tx"><span class="c-p">❯</span> frame update</div><div class="tx"><span class="c-ok">✓</span> shell <span class="c-mu">0:02</span></div><div class="tx"><span class="c-ok">✓</span> 3 packages installed <span class="c-mu">0:41</span></div><div class="tx"><span class="c-p">❯</span> <span class="caret"></span></div></div>
+          <div class="win" style="left:760px;top:70px;width:480px;height:260px"><span class="lab">ghostty</span><div class="tx"><span class="c-p">❯</span> facet update</div><div class="tx"><span class="c-ok">✓</span> shell <span class="c-mu">0:02</span></div><div class="tx"><span class="c-ok">✓</span> 3 packages installed <span class="c-mu">0:41</span></div><div class="tx"><span class="c-p">❯</span> <span class="caret"></span></div></div>
           <div class="win" style="left:760px;top:360px;width:480px;height:320px"><span class="lab">vesktop · #general</span><div class="tx"><span class="c-se">anna</span>  on my way</div><div class="tx"><span class="c-se">max</span>  gg, one more?</div><div class="tx"><span class="c-se">lena</span>  sent a picture</div></div>
           <div class="win" style="left:40px;top:520px;width:690px;height:160px"><span class="lab">spotify</span><div class="tx c-tx">Midnight City</div><div class="tx c-mu">M83</div></div>
         </div>
@@ -1195,7 +1195,7 @@
   <section class="frame" id="canvas">
     <span class="label">infinite canvas <span class="k">· Super+wheel</span></span>
     <h2>A desktop without edges</h2>
-    <p>With the canvas layout, windows float on one plane and the screen is a view you move over it. Super+wheel zooms out until every window is in view, each one a live preview; a click goes there. The bar shows a minimap instead of workspace numbers. Hyprland's tiling is still there: <code>frame layout tiling</code>.</p>
+    <p>With the canvas layout, windows float on one plane and the screen is a view you move over it. Super+wheel zooms out until every window is in view, each one a live preview; a click goes there. The bar shows a minimap instead of workspace numbers. Hyprland's tiling is still there: <code>facet layout tiling</code>.</p>
     <div class="row" style="margin-bottom:14px">
       <button class="btn" id="ov-zoom">overview <kbd>Super</kbd>+wheel</button>
       <button class="btn" id="ov-next">next window <kbd>Super</kbd><kbd>Alt</kbd><kbd>→</kbd></button>
@@ -1244,13 +1244,13 @@
   </section>
 
   <section class="frame" id="install">
-    <span class="label">frame install</span>
+    <span class="label">facet install</span>
     <h2>One line to install, and only what you tick</h2>
-    <p>The setup asks how much you want, ticks the apps off a checklist, then the layout and the theme. Only the modules you pick are downloaded; <code>frame add</code> brings more later. Long steps run behind a spinner and log to a file. <code>frame</code> alone opens a menu: update, theme, layout, remove, status, clean.</p>
+    <p>The setup asks how much you want, ticks the apps off a checklist, then the layout and the theme. Only the modules you pick are downloaded; <code>facet add</code> brings more later. Long steps run behind a spinner and log to a file. <code>frame</code> alone opens a menu: update, theme, layout, remove, status, clean.</p>
     <div class="row"><button class="btn" id="term-again">play it again</button></div>
-    <div class="term" id="term" role="img" aria-label="frame install on a fresh CachyOS"><div><span class="ps">❯</span> curl -fsSL https://frame-shell.github.io/install.sh | bash</div>
+    <div class="term" id="term" role="img" aria-label="facet install on a fresh CachyOS"><div><span class="ps">❯</span> curl -fsSL https://facet-shell.github.io/install.sh | bash</div>
 <div> </div>
-<div>  <span class="wd">frame</span>  <span class="dim">frameshell · CachyOS · Hyprland</span></div>
+<div>  <span class="wd">frame</span>  <span class="dim">facet · CachyOS · Hyprland</span></div>
 <div> </div>
 <div>  <span class="ok">✓</span> What should be set up: full</div>
 <div>  <span class="ok">✓</span> Apps: spotify discord zed</div>
@@ -1263,7 +1263,7 @@
 <div>  <span class="ok">✓</span> 23 packages installed <span class="dim">1:06</span></div>
 <div><span class="hi">[3/16]</span> <span class="bold">Theme</span></div>
 <div><span class="dim">  …</span></div>
-<div><span class="hi">[16/16]</span> <span class="bold">frame command</span></div>
+<div><span class="hi">[16/16]</span> <span class="bold">facet command</span></div>
 <div>  <span class="ok">✓</span> frame is now available as a command (~/.local/bin/frame)</div>
 <div> </div>
 <div><span class="ok">Done.</span> Open a new terminal to see the changes.</div></div>
@@ -1272,10 +1272,10 @@
   <section class="grid" id="more">
     <div class="frame">
       <span class="label">updates <span class="k">· in the bar</span></span>
-      <div class="ubar" id="ubar" tabindex="0"><span class="bk">[</span><span class="u">↑ 12 (3 aur) · frame 2</span><span class="bk">]</span><span class="ucard"><b class="c-tx">12 packages</b>, 3 of them from the AUR<br><b class="c-tx">frameshell:</b> shell and cli are behind<br><span class="c-mu">a click runs the update in Ghostty, then frame update</span></span></div>
+      <div class="ubar" id="ubar" tabindex="0"><span class="bk">[</span><span class="u">↑ 12 (3 aur) · frame 2</span><span class="bk">]</span><span class="ucard"><b class="c-tx">12 packages</b>, 3 of them from the AUR<br><b class="c-tx">facet:</b> shell and cli are behind<br><span class="c-mu">a click runs the update in Ghostty, then facet update</span></span></div>
       <ul class="stag">
         <li>packages: pacman against a copy of its databases, and paru or yay</li>
-        <li>frameshell too: every module compared with its GitHub branch, nothing fetched</li>
+        <li>facet too: every module compared with its GitHub branch, nothing fetched</li>
         <li>checked every 30 minutes, and again when the update window closes</li>
       </ul>
     </div>
@@ -1307,7 +1307,7 @@
       <span class="label">light on disk</span>
       <ul class="stag">
         <li>what the shell can do itself needs no package: idle lock, still wallpapers, clipboard history, file search</li>
-        <li><code>frame clean</code> frees caches, orphans and old backups, each with its size</li>
+        <li><code>facet clean</code> frees caches, orphans and old backups, each with its size</li>
       </ul>
     </div>
   </section>
@@ -1339,11 +1339,11 @@
 
   <section class="frame wip" id="status">
     <span class="label">status · work in progress</span>
-    <p>frameshell is a work in progress and still has a lot of bugs, so expect things to break. <code>frame install</code> moves the configs it replaces into a backup first, and <code>frame restore</code> puts them back. <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">TESTING.md</a> lists what to try and the command that shows why when something fails. Ideas, bug reports and help are welcome on <a href="https://github.com/orgs/frame-shell/projects/1">the board</a>.</p>
+    <p>facet is a work in progress and still has a lot of bugs, so expect things to break. <code>facet install</code> moves the configs it replaces into a backup first, and <code>facet restore</code> puts them back. <a href="https://github.com/facet-shell/facet/blob/main/TESTING.md">TESTING.md</a> lists what to try and the command that shows why when something fails. Ideas, bug reports and help are welcome on <a href="https://github.com/orgs/facet-shell/projects/1">the board</a>.</p>
   </section>
 
   <footer>
-    <span>frameshell · by <a href="https://github.com/vxnsin">vxnsin</a> · <a href="https://github.com/frame-shell">source</a> · <a href="https://github.com/frame-shell/frameshell/tree/main/docs">docs</a> · <a href="https://github.com/orgs/frame-shell/projects/1">board</a> · <a href="https://github.com/frame-shell/frameshell/blob/main/TESTING.md">testing</a></span>
+    <span>facet · by <a href="https://github.com/vxnsin">vxnsin</a> · <a href="https://github.com/facet-shell">source</a> · <a href="https://github.com/facet-shell/facet/tree/main/docs">docs</a> · <a href="https://github.com/orgs/facet-shell/projects/1">board</a> · <a href="https://github.com/facet-shell/facet/blob/main/TESTING.md">testing</a></span>
     <span>thanks to <a href="https://github.com/refact0r/system24">system24</a>, <a href="https://github.com/caelestia-dots">caelestia</a>, <a href="https://github.com/end-4/dots-hyprland">end-4</a> and <a href="https://quickshell.org">Quickshell</a></span>
   </footer>
 </main>
@@ -1431,15 +1431,15 @@ function applyTheme(id, animate) {
   themeListeners.forEach(f => f(id));
   // The command types itself, like in a terminal
   const out = $("#theme-typed"), ok = $("#theme-ok");
-  const text = `frame theme set ${id}`;
+  const text = `facet theme set ${id}`;
   clearInterval(typing);
   ok.textContent = "";
   if (!animate || reduced()) { out.textContent = text; return; }
-  let i = "frame theme set ".length;
+  let i = "facet theme set ".length;
   out.textContent = text.slice(0, i);
   typing = setInterval(() => {
     out.textContent = text.slice(0, ++i);
-    if (i >= text.length) { clearInterval(typing); ok.textContent = `✓ frameshell now uses ${id[0].toUpperCase() + id.slice(1)}`; }
+    if (i >= text.length) { clearInterval(typing); ok.textContent = `✓ facet now uses ${id[0].toUpperCase() + id.slice(1)}`; }
   }, 45);
 }
 // The switch spreads out from where you clicked, over the whole page
@@ -1476,7 +1476,7 @@ function tick() {
 tick();
 setInterval(tick, 10000);
 
-const sections = [["top", "frameshell · a terminal-styled desktop", 0], ["launcher", "launcher · Super+Space", 1], ["themes", "themes · frame theme set", 2], ["draw", "draw · Super+P", 3], ["capture", "screenshots · Print", 4], ["record", "recording · Super+Shift+R", 4], ["control", "control center · Super+C", 5], ["settings", "settings · Super+,", 5], ["lock", "lockscreen · Super+L", 5], ["canvas", "infinite canvas · Super+wheel", 6], ["games", "games · Super+Tab", 6], ["install", "frame install", 7], ["more", "what else is in it", 7], ["keys", "keys", 7], ["status", "work in progress", 7]];
+const sections = [["top", "facet · a terminal-styled desktop", 0], ["launcher", "launcher · Super+Space", 1], ["themes", "themes · facet theme set", 2], ["draw", "draw · Super+P", 3], ["capture", "screenshots · Print", 4], ["record", "recording · Super+Shift+R", 4], ["control", "control center · Super+C", 5], ["settings", "settings · Super+,", 5], ["lock", "lockscreen · Super+L", 5], ["canvas", "infinite canvas · Super+wheel", 6], ["games", "games · Super+Tab", 6], ["install", "facet install", 7], ["more", "what else is in it", 7], ["keys", "keys", 7], ["status", "work in progress", 7]];
 const wsLinks = $$(".ws a");
 const spy = new IntersectionObserver(entries => {
   for (const e of entries) {
@@ -1583,7 +1583,7 @@ $$(".copy").forEach(b => b.addEventListener("click", async () => {
       draw.classList.add("show");
       await wait(stage, 2200);
       theme = NAMES[(NAMES.indexOf(theme) + 1) % NAMES.length];
-      caption(`<span class="c-p">❯</span>&nbsp;frame theme set ${theme}`);
+      caption(`<span class="c-p">❯</span>&nbsp;facet theme set ${theme}`);
       await wait(stage, 500);
       await sweepTo(theme);
       await wait(stage, 1500);
@@ -1608,8 +1608,8 @@ $$(".copy").forEach(b => b.addEventListener("click", async () => {
     ["Steam", "games", "steam", 40, "", "Application for managing and playing games on Steam"],
     ["Vesktop", "chat", "vesktop", 133, "#general · frame dev", "Vesktop is a custom Discord desktop app"],
     ["Spotify", "audio", "spotify", 120, "Midnight City · M83", "Music for every moment"],
-    ["frameshell paint", "graphics", "qs ipc call editor paint", 7, "", "An empty page in the picture editor, with the pen"],
-    ["frameshell media", "graphics", "qs ipc call media toggle", 12, "", "Screenshots and recordings"]
+    ["facet paint", "graphics", "qs ipc call editor paint", 7, "", "An empty page in the picture editor, with the pen"],
+    ["facet media", "graphics", "qs ipc call media toggle", 12, "", "Screenshots and recordings"]
   ];
   const EMOJI = [["❤️", "red heart"], ["🩷", "pink heart"], ["💜", "purple heart"], ["😍", "smiling face with heart-eyes"], ["🫶", "heart hands"], ["💕", "two hearts"], ["👍", "thumbs up"], ["🔥", "fire"], ["🐱", "cat face"], ["🍵", "teacup without handle"]];
   const ANSWERS = [
@@ -1665,7 +1665,7 @@ $$(".copy").forEach(b => b.addEventListener("click", async () => {
       case "#": return EMOJI.filter(([, n]) => !rest || n.split(" ").some(w => w.startsWith(rest.toLowerCase()))).map(([e, n]) => R(e, n, "emoji", "enter copies · shift+enter pastes it into the window behind", [["emoji", e], ["group", "smileys & emotion"]], "surface2", { emoji: true }));
       case "/": return rest ? [["/", rest, "folder", "~/Documents"], ["·", `${rest}.md`, "file", "~/Documents/" + rest], ["·", `old-${rest}.txt`, "file", "~/Downloads"]].map(([g, t, c, dir]) => R(g, t, c, dir, [["path", `${dir}/${t}`]], "secondary")) : [I("type a file or folder name", "words before the last narrow the path")];
       case "ssh": return [R(">", rest ? `ssh ${rest}` : "nas", "ssh", rest ? "not in ~/.ssh/config" : "you@192.168.1.20", [["host", "192.168.1.20"], ["user", "you"], ["port", "22"]], "frame")];
-      case ";": return [["¶", "curl -fsSL https://frame-shell.github.io/install.sh | bash"], ["▣", "image · png · 1.2MB"], ["¶", "token for the staging box"], ["¶", "meeting at 15:30"]].filter(([, t]) => !rest || t.includes(rest)).map(([g, t]) => R(g, t, g === "▣" ? "image" : "text", "enter copies · shift+enter deletes it from the history", [], "frame"));
+      case ";": return [["¶", "curl -fsSL https://facet-shell.github.io/install.sh | bash"], ["▣", "image · png · 1.2MB"], ["¶", "token for the staging box"], ["¶", "meeting at 15:30"]].filter(([, t]) => !rest || t.includes(rest)).map(([g, t]) => R(g, t, g === "▣" ? "image" : "text", "enter copies · shift+enter deletes it from the history", [], "frame"));
       case "?": { const [k, ...w] = rest.split(" "); const eng = { g: "Google", ddg: "DuckDuckGo", yt: "YouTube", gh: "GitHub", aw: "Arch Wiki", aur: "AUR", w: "Wikipedia", r: "Reddit" }; return eng[k] && w.length ? [R(eng[k][0], `${eng[k]}: ${w.join(" ")}`, k, "opens in the browser", [], "secondary")] : Object.entries(eng).map(([key, n]) => R(n[0], rest ? `${n}: ${rest}` : `${key} · ${n}`, key, "", [], "secondary")); }
       case "c": return rest ? [R("c", rest, "claude", "enter asks claude -p; nothing is sent before that", [["model", "haiku"], ["runs in", "an empty folder"]], "accent")] : [I("ask Claude something", "only there when the claude CLI is installed")];
       default: {
@@ -2913,9 +2913,9 @@ function claimKeys(engine, el) {
       ["h", "modules · only what is installed is downloaded"], ...MODS.map(([n, on]) => ["mod", n, on]),
       ["h", "app settings"], ["btn", "Spotify Web API", "", "connect"], ["btn", "keyboard", "", "open ›"], ["bool", "keyboard live", "", 0], ["btn", "GoXLR lights", "", "apply"]]],
     ["system", "updates, boot, login, about", [
-      ["btn", "updates", "everything is up to date", "update", "prt"], ["bool", "frameshell updates", "", 1],
+      ["btn", "updates", "everything is up to date", "update", "prt"], ["bool", "facet updates", "", 1],
       ["btns", "boot splash and console colors", "", ["install", "remove"]], ["btns", "login screen", "", ["login screen", "auto", "distro's"]], ["btns", "check and clean", "", ["status", "clean"]],
-      ["h", "about"], ["note", "the version of the frame command and of every module"], ["btn", "settings file", "~/.config/frameshell/shell.json", "open"]]]
+      ["h", "about"], ["note", "the version of the facet command and of every module"], ["btn", "settings file", "~/.config/frameshell/shell.json", "open"]]]
   ];
   const val = {}, def = {};
   for (const [, , rows] of PAGES) for (const r of rows) {
@@ -3143,7 +3143,7 @@ function claimKeys(engine, el) {
   (async () => { if (reduced()) return; await inView(game); await sleep(1200); if (game.classList.contains("desk")) return; showPeek(); await sleep(1800); if (!peek.matches(":hover") && !hot.matches(":hover")) hidePeek(); })();
 })();
 
-// ══ frame install, typed out ═════════════════════════════════
+// ══ facet install, typed out ═════════════════════════════════
 (() => {
   const term = watch($("#term"));
   const APPS = [["spotify", "Spotify, themed, with search and controls in the launcher"], ["discord", "Vesktop (Discord), themed, with calls and DMs in the shell"], ["steam", "Steam with Millennium, themed, its notifications in the shell"], ["zed", "Zed, the code editor"], ["dolphin", "Dolphin, the file manager"], ["zen", "Zen, the browser"], ["claude", "Claude Code, the claude command; the launcher's c asks it"]];
@@ -3176,15 +3176,15 @@ function claimKeys(engine, el) {
       line(`  <span class="ok">✓</span> ${q.replace(/\?.*$/, "")}: ${opts[pickAt][0]}`);
       return true;
     }
-    const cmd = line(), text = "curl -fsSL https://frame-shell.github.io/install.sh | bash";
+    const cmd = line(), text = "curl -fsSL https://facet-shell.github.io/install.sh | bash";
     for (let i = 1; i <= text.length; i++) { cmd.innerHTML = `<span class="ps">❯</span> ${text.slice(0, i)}<span class="caret"></span>`; if (!(await w(22))) return; }
     cmd.innerHTML = `<span class="ps">❯</span> ${text}`;
     if (!(await w(500))) return;
-    line(); line(`  <span class="wd">frame</span>  <span class="dim">frameshell · CachyOS · Hyprland</span>`); line();
+    line(); line(`  <span class="wd">frame</span>  <span class="dim">facet · CachyOS · Hyprland</span>`); line();
     if (!(await w(400))) return;
     if (!(await menu("What should be set up?", [["full", "the full desktop: bar, launcher, lockscreen, Hyprland, wallpapers, terminal and prompt"], ["shell", "only the shell, without the terminal look (Ghostty, fish, Starship, fastfetch)"]], 0))) return;
     // the checklist: the cursor moves down, space ticks
-    const head = [line(`  Which apps? (more any time: frame add)`), line(`  <span class="dim">↑↓ move · space tick · a all · enter done · esc cancel</span>`)];
+    const head = [line(`  Which apps? (more any time: facet add)`), line(`  <span class="dim">↑↓ move · space tick · a all · enter done · esc cancel</span>`)];
     const rows = APPS.map(() => line()), count = line();
     const on = APPS.map(() => false);
     const draw = sel => {
@@ -3204,17 +3204,17 @@ function claimKeys(engine, el) {
     if (!(await w(500))) return;
     line(`  <span class="ok">✓</span> GoXLR found, GoXLR Utility will be installed`);
     if (!(await w(500))) return;
-    if (!(await menu("Window layout? (switch any time: frame layout tiling|canvas)", [["tiling", "Hyprland's tiling with workspaces"], ["canvas", "windows float on an endless plane, the bar shows a minimap"]], 1))) return;
+    if (!(await menu("Window layout? (switch any time: facet layout tiling|canvas)", [["tiling", "Hyprland's tiling with workspaces"], ["canvas", "windows float on an endless plane, the bar shows a minimap"]], 1))) return;
     line(); line(`<span class="hi">[1/16]</span> <span class="bold">Modules</span>`);
     for (const [m, took] of [["shell", 3], ["terminal", 1], ["spotify", 1], ["discord", 1], ["zed", 1]]) if (!(await spin(`Getting the ${m} module`, m, 6 + took * 3, took))) return;
     line(`<span class="hi">[2/16]</span> <span class="bold">Dependencies</span>`);
     if (!(await spin("Installing 23 packages with paru", "23 packages installed", 34, 66))) return;
     line(`<span class="hi">[3/16]</span> <span class="bold">Theme</span>`);
-    if (!(await menu("Which theme? (switch any time: frame theme set <name>)", NAMES.map(n => [n, THEMES[n].d]), NAMES.indexOf(current)))) return;
+    if (!(await menu("Which theme? (switch any time: facet theme set <name>)", NAMES.map(n => [n, THEMES[n].d]), NAMES.indexOf(current)))) return;
     for (const [n, p] of [[4, "ghostty"], [5, "fish"], [6, "quickshell"], [7, "hypr"]]) { line(`<span class="hi">[${n}/16]</span> <span class="bold">${p}</span>`); line(`  <span class="ok">✓</span> Config linked`); if (!(await w(260))) return; }
     line(`<span class="dim">  …</span>`);
     if (!(await w(400))) return;
-    line(`<span class="hi">[16/16]</span> <span class="bold">frame command</span>`);
+    line(`<span class="hi">[16/16]</span> <span class="bold">facet command</span>`);
     line(`  <span class="ok">✓</span> frame is now available as a command (~/.local/bin/frame)`);
     line(`  <span class="dim">Old configs were moved to ~/.local/state/frameshell/backup/…</span>`);
     line(); line(`<span class="ok">Done.</span> Open a new terminal to see the changes.`);
