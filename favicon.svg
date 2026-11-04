@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<title>facet</title>
+<!-- logo.svg for 16 to 32px: the gem fills more of the tile, the cuts are wider -->
+<defs><mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32"><path d="M7.3 2.5L24.7 2.5L29.5 7.3L29.5 24.7L24.7 29.5L7.3 29.5L2.5 24.7L2.5 7.3Z" fill="#fff"/><path d="M11.6 9.4L20.4 9.4L22.6 11.6L22.6 20.4L20.4 22.6L11.6 22.6L9.4 20.4L9.4 11.6ZM7.3 2.5L11.6 9.4M24.7 2.5L20.4 9.4M29.5 7.3L22.6 11.6M29.5 24.7L22.6 20.4M24.7 29.5L20.4 22.6M7.3 29.5L11.6 22.6M2.5 24.7L9.4 20.4M2.5 7.3L9.4 11.6" fill="none" stroke="#000" stroke-width="1.7"/></mask></defs>
+<rect width="32" height="32" rx="7" fill="#0b0c1f"/>
+<g mask="url(#cut)">
+<path d="M7.3 2.5L24.7 2.5L20.4 9.4L11.6 9.4Z" fill="#93a4f7"/>
+<path d="M24.7 2.5L29.5 7.3L22.6 11.6L20.4 9.4Z" fill="#93a4f7"/>
+<path d="M29.5 7.3L29.5 24.7L22.6 20.4L22.6 11.6Z" fill="#5d6fe8"/>
+<path d="M29.5 24.7L24.7 29.5L20.4 22.6L22.6 20.4Z" fill="#3f4bb8"/>
+<path d="M24.7 29.5L7.3 29.5L11.6 22.6L20.4 22.6Z" fill="#3f4bb8"/>
+<path d="M7.3 29.5L2.5 24.7L9.4 20.4L11.6 22.6Z" fill="#5d6fe8"/>
+<path d="M2.5 24.7L2.5 7.3L9.4 11.6L9.4 20.4Z" fill="#a48cf2"/>
+<path d="M2.5 7.3L7.3 2.5L11.6 9.4L9.4 11.6Z" fill="#e1e4ff"/>
+<path d="M11.6 9.4L20.4 9.4L22.6 11.6L22.6 20.4L20.4 22.6L11.6 22.6L9.4 20.4L9.4 11.6Z" fill="#5d6fe8"/>
+</g>
+</svg>
